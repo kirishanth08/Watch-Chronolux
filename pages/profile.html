@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChronoLux | Profile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/portal.css">
+</head>
+<body class="portal-page client-page">
+  <div class="portal-shell">
+    <aside class="portal-sidebar">
+      <a href="index.html" class="brand"><i class="fas fa-gem"></i> ChronoLux</a>
+      <div class="nav-section">
+        <span class="nav-section-title">Client Portal</span>
+        <a class="nav-link" href="user-dashboard.html"><i class="fas fa-home"></i> Dashboard</a>
+        <a class="nav-link" href="submit-repair.html"><i class="fas fa-tools"></i> Submit Repair</a>
+        <a class="nav-link" href="track-repair.html"><i class="fas fa-map-marked-alt"></i> Track Repair</a>
+        <a class="nav-link" href="repair-history.html"><i class="fas fa-history"></i> Repair History</a>
+        <a class="nav-link" href="payments.html"><i class="fas fa-credit-card"></i> Payments</a>
+        <a class="nav-link" href="appointments.html"><i class="fas fa-calendar-alt"></i> Appointments</a>
+        <a class="nav-link" href="saved-items.html"><i class="fas fa-heart"></i> Saved Items</a>
+        <a class="nav-link" href="notifications.html"><i class="fas fa-bell"></i> Notifications</a>
+        <a class="nav-link" href="support.html"><i class="fas fa-headset"></i> Support</a>
+        <a class="nav-link active" href="profile.html"><i class="fas fa-user"></i> Profile</a>
+        <a class="nav-link" href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+        <a class="nav-link" href="login.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+      </div>
+    </aside>
+
+    <main class="portal-content">
+      <div class="portal-topbar client-topbar">
+        <div>
+          <button class="btn-gold btn-sm sidebar-toggle"><i class="fas fa-bars"></i> Menu</button>
+          <span class="client-eyebrow"><i class="fas fa-user"></i> Account</span>
+          <h2>My Profile</h2>
+          <p class="client-topbar-copy">Manage your contact details, address, and private client preferences.</p>
+        </div>
+        <div class="client-topbar-actions">
+          <button class="client-icon-btn" type="button" data-client-theme><i class="fas fa-moon"></i><span>Dark</span></button>
+          <button class="client-icon-btn" type="button" data-client-rtl><i class="fas fa-right-left"></i><span>RTL</span></button>
+          <a class="client-profile-chip" href="profile.html"><span class="client-avatar" data-client-initials>SL</span><span data-client-name>Sofia Laurent</span></a>
+        </div>
+      </div>
+
+      <div class="client-grid">
+        <section class="portal-card client-span-4">
+          <div class="card-body text-center">
+            <div class="client-avatar mx-auto mb-3" style="width: 82px; height: 82px; font-size: 1.6rem;" data-client-initials>SL</div>
+            <h4 class="card-title" data-client-name>Sofia Laurent</h4>
+            <p class="client-muted" data-client-email>sofia@example.com</p>
+            <span class="client-status success">Elite Client</span>
+            <div class="portal-list mt-4 text-start">
+              <div class="portal-list-item">Member since 2024</div>
+              <div class="portal-list-item">4 saved collection items</div>
+              <div class="portal-list-item">Preferred atelier: Bond Street</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="portal-card client-span-8">
+          <div class="card-body">
+            <h4 class="card-title">Profile Details</h4>
+            <form class="portal-form mt-3" data-client-form="Profile updated" novalidate>
+              <div class="row g-3">
+                <div class="col-md-6"><label class="form-label">Full Name</label><input type="text" class="form-control" value="Sofia Laurent" required></div>
+                <div class="col-md-6"><label class="form-label">Email</label><input type="email" class="form-control" value="sofia@example.com" required></div>
+                <div class="col-md-6"><label class="form-label">Phone</label><input type="text" class="form-control" value="+44 20 7946 0958" required></div>
+                <div class="col-md-6"><label class="form-label">Preferred Contact</label><select class="form-select"><option>Email</option><option>Phone</option><option>SMS</option></select></div>
+                <div class="col-12"><label class="form-label">Address</label><input type="text" class="form-control" value="48 Bond Street, London" required></div>
+                <div class="col-md-6"><label class="form-label">Password</label><input type="password" class="form-control" value="12345678" required></div>
+                <div class="col-md-6"><label class="form-label">Collection Preference</label><select class="form-select"><option>In-store pickup</option><option>Private courier</option><option>Discuss each time</option></select></div>
+              </div>
+              <button type="submit" class="btn-gold mt-4"><i class="fas fa-save"></i> Update Profile</button>
+            </form>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+  <script src="../assets/js/portal.js"></script>
+  <script src="../assets/js/client-portal.js"></script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+================================================================================
+  TIMECRAFT REPAIRS — CUSTOMIZATION GUIDE
+  Watch & Jewellery Repair Shop Website
+================================================================================
+
+
+1. BRAND IDENTITY
+-----------------
+Business Name:
+  Search all HTML files for "TimeCraft Repairs" and replace with your shop name.
+  Primary location: navbar .navbar-brand and footer h5.
+
+Logo:
+  Replace the Font Awesome clock icon (<i class="fas fa-clock">) with an <img>
+  tag pointing to your logo file in assets/images/.
+  Recommended size: 180×48px, WebP or PNG with transparent background.
+
+Tagline & Copy:
+  Edit text directly in each HTML page. Key sections:
+    - index.html hero tagline and description
+    - about.html workshop history and team bios
+    - Footer about paragraph (present on every page)
+
+
+2. COLOR SCHEME
+---------------
+All colors are controlled via CSS variables in assets/css/style.css.
+
+  :root {
+    --color-primary   : #B8860B;   /* Gold — buttons, accents, icons */
+    --color-bg        : #FAFAF8;   /* Page background */
+    --color-text      : #1C1C1C;   /* Body text */
+    --color-section   : #E8E8E8;   /* Alternate section backgrounds */
+    --color-card-bg   : #FFFFFF;   /* Card backgrounds */
+  }
+
+Dark mode overrides are in assets/css/dark-mode.css under [data-theme="dark"].
+
+To change the primary gold color, update --color-primary in BOTH files.
+
+
+3. TYPOGRAPHY
+-------------
+Fonts are loaded from Google Fonts CDN in each page <head>:
+  - Headings: Libre Baskerville
+  - Body: Lato
+
+To change fonts:
+  1. Choose fonts at https://fonts.google.com (max 2 fonts per assignment spec)
+  2. Update the Google Fonts link in every HTML file
+  3. Update --font-heading and --font-body in style.css
+
+
+4. IMAGES
+---------
+Current images use Unsplash CDN URLs with ?fm=webp for WebP format.
+
+To use local images:
+  1. Save optimized WebP files to assets/images/
+  2. Replace src attributes in HTML, e.g.:
+     src="../assets/images/hero-watch.webp"
+  3. Always include descriptive alt text for accessibility
+
+Recommended image sizes:
+  Hero banner     : 1920×1080px
+  Service cards   : 800×600px
+  Team photos     : 600×800px
+  Blog thumbnails : 800×500px
+  Before/after    : 800×600px each
+
+
+5. SERVICES & PRICING
+---------------------
+Services page (services.html):
+  Each service card is a standalone <article class="service-card"> block.
+  Duplicate a card block to add services; update icon class, title,
+  description, turnaround, and price.
+
+Pricing page (pricing.html):
+  Edit table rows directly in the <tbody> sections.
+  Add rows by copying an existing <tr> block.
+
+Service detail template (service-details.html):
+  Duplicate this page for each service, updating content, checklist,
+  pricing tiers, and FAQ items.
+
+
+6. NAVIGATION
+-------------
+Navbar links are in the <ul class="navbar-nav"> block on every page.
+To add a new page:
+  1. Create the HTML file in pages/
+  2. Add a nav-link to the navbar on ALL pages
+  3. Add a footer link in the Quick Links column
+  4. Add an entry to sitemap.xml
+
+
+7. FORMS
+--------
+Booking form (booking.html):
+  - Form ID: bookingForm
+  - Validation handled by assets/js/main.js
+  - Set Formspree action: action="https://formspree.io/f/YOUR_ID"
+  - Dropdown options can be edited in the <select> elements
+
+Contact form (contact.html):
+  - Form ID: contactForm
+  - Same Formspree setup as booking form
+
+To add new form fields:
+  1. Add HTML field with a unique id
+  2. Add validation in main.js initBookingForm() or initContactForm()
+  3. Add the field name attribute for Formspree to capture it
+
+
+8. DARK MODE & RTL
+------------------
+Dark mode:
+  - Toggle button: #themeToggle in navbar
+  - Preference saved in localStorage key "theme"
+  - Customize dark colors in dark-mode.css
+
+RTL (Right-to-Left):
+  - Toggle button: #rtlToggle in navbar
+  - Preference saved in localStorage key "direction"
+  - Layout flips defined in rtl.css
+  - Set default RTL: add dir="rtl" to <html> tag
+
+
+9. SEO
+------
+Every page should have:
+  - Unique <title> (50–60 characters)
+  - Unique <meta name="description"> (150–160 characters)
+  - Exactly one <h1> per page
+  - JSON-LD structured data where applicable
+
+Update sitemap.xml and robots.txt with your live domain.
+index.html includes JewelryStore JSON-LD — update business details there.
+
+
+10. HOVER & ANIMATION EFFECTS
+-----------------------------
+All hover transitions use: transition: all 0.3s ease
+
+Key effect classes in style.css:
+  .service-card:hover     → translateY(-6px) + deeper shadow
+  .btn-gold:hover          → scale(1.02) + color shift
+  .nav-link:hover::after  → underline slide-in from left
+  .img-hover-wrap:hover   → image scale(1.05)
+  .trust-box:hover i      → icon bounce translateY(-4px)
+
+Do not add animation delays greater than 0.4s.
+
+
+11. FOOTER
+----------
+Four columns: About, Quick Links, Services, Contact.
+Update contact details in Column 4 on every page (or use find-and-replace).
+Social media links are placeholder "#" — replace with your profiles.
+
+================================================================================

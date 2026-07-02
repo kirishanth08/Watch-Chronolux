@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ChronoLux is enhancing our Mayfair atelier. Register for updates on our expanded haute horology facilities and new private consultation suites.">
+  <title>Coming Soon | ChronoLux Atelier Enhancement</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+</head>
+<body>
+
+  <!-- Skip Navigation Link (Accessibility) -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <main id="main-content">
+
+    <!-- ===== COMING SOON ===== -->
+    <section class="coming-soon-page" aria-labelledby="coming-soon-heading" style="background-image:url('../assets/images/consultation-boutique.jpg'); background-size:cover; background-position:center; position:relative;">
+      <div class="container" style="position:relative; z-index:2;">
+        <a href="index.html" class="navbar-brand text-white mb-4 d-inline-block">
+          <i class="fas fa-gem me-2" aria-hidden="true"></i>ChronoLux
+        </a>
+
+        <h1 id="coming-soon-heading">Elevating Our Mayfair Atelier</h1>
+        <p class="mb-0">Our bench is getting a major overhaul - new equipment, expanded services, and a refreshed space for your treasured timepieces. We will be back shortly.</p>
+
+        <!-- Countdown Timer -->
+        <div id="countdown" class="countdown" aria-label="Countdown to reopening">
+          <div class="countdown-item">
+            <span class="number" id="countDays">00</span>
+            <span class="label">Days</span>
+          </div>
+          <div class="countdown-item">
+            <span class="number" id="countHours">00</span>
+            <span class="label">Hours</span>
+          </div>
+          <div class="countdown-item">
+            <span class="number" id="countMinutes">00</span>
+            <span class="label">Minutes</span>
+          </div>
+          <div class="countdown-item">
+            <span class="number" id="countSeconds">00</span>
+            <span class="label">Seconds</span>
+          </div>
+        </div>
+
+        <!-- Mailchimp-ready Email Signup -->
+        <p class="mb-3">Get notified the moment our doors reopen.</p>
+        <form class="newsletter-form" action="https://YOUR-MAILCHIMP-URL.list-manage.com/subscribe/post" method="post" target="_blank" aria-label="Email signup for reopening notification">
+          <label for="comingSoonEmail" class="visually-hidden">Email address</label>
+          <input type="email" id="comingSoonEmail" name="EMAIL" placeholder="Your email address" required autocomplete="email">
+          <button type="submit" class="btn-gold">Notify Me</button>
+        </form>
+
+        <p class="mt-4 mb-0">
+          <a href="index.html" class="text-white"><i class="fas fa-arrow-left me-2" aria-hidden="true"></i>Return to Homepage</a>
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

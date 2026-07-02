@@ -1,0 +1,105 @@
+================================================================================
+  TIMECRAFT REPAIRS — CREDITS & ATTRIBUTIONS
+  Watch & Jewellery Repair Shop Website
+================================================================================
+
+
+FRAMEWORKS & LIBRARIES
+----------------------
+Bootstrap 5.3.3
+  License : MIT
+  URL     : https://getbootstrap.com
+  Usage   : Grid system, navbar, accordion, form components
+
+Font Awesome 6.5.1 (Free)
+  License : Font Awesome Free License (Icons: CC BY 4.0, Fonts: SIL OFL 1.1,
+            Code: MIT)
+  URL     : https://fontawesome.com
+  Usage   : All icons throughout the site
+
+
+FONTS
+-----
+Libre Baskerville
+  Designer : Pablo Impallari
+  License  : SIL Open Font License 1.1
+  URL      : https://fonts.google.com/specimen/Libre+Baskerville
+  Usage    : Headings (h1–h6, navbar brand, section titles)
+
+Lato
+  Designer : Łukasz Dziedzic
+  License  : SIL Open Font License 1.1
+  URL      : https://fonts.google.com/specimen/Lato
+  Usage    : Body text, buttons, form labels
+
+
+IMAGES (Unsplash — Unsplash License)
+------------------------------------
+All placeholder images sourced from Unsplash (https://unsplash.com).
+Free to use under the Unsplash License. Replace with your own photography
+before going live.
+
+  Hero watch close-up
+    Photo by Unsplash contributors
+    URL: images.unsplash.com/photo-1524592094714-0f0654e20314
+
+  Workshop / repair bench
+    URL: images.unsplash.com/photo-1587836379228-097dbcc83136
+
+  Watch movement / servicing
+    URL: images.unsplash.com/photo-1614164185128-e2814bb89a62
+
+  Jewellery / rings
+    URL: images.unsplash.com/photo-1515562141207-7a88fb7ce338
+
+  Team portrait placeholders
+    Various Unsplash portrait and workshop photos
+
+  Blog article thumbnails
+    Various Unsplash watch and jewellery photos
+
+Full photographer attributions available at each Unsplash photo page.
+When replacing images, maintain alt text describing the image content.
+
+
+THIRD-PARTY SERVICES (Integration Placeholders)
+------------------------------------------------
+Formspree
+  URL   : https://formspree.io
+  Usage : Booking and contact form submission handling
+  Note  : Requires account setup; free tier available
+
+Mailchimp
+  URL   : https://mailchimp.com
+  Usage : Newsletter signup on index.html and coming-soon.html
+  Note  : Requires account setup; free tier available
+
+Google Maps
+  URL   : https://maps.google.com
+  Usage : Embedded map on booking.html and contact.html
+  Note  : Replace placeholder iframe with your shop location embed
+
+
+DESIGN INSPIRATION
+------------------
+Hover and interaction patterns referenced from:
+  - https://boutique-lake-mu.vercel.app/
+  - https://deep-space-rosy.vercel.app/
+
+Original implementation — not copied code or assets.
+
+
+CODE
+----
+HTML, CSS, and JavaScript authored for Assignment 13 — Watch & Jewellery
+Repair Shop Website (Static HTML Template).
+
+  style.css       : Custom styles, CSS variables, responsive breakpoints
+  dark-mode.css   : Dark theme variable overrides
+  rtl.css         : Right-to-left layout support
+  main.js         : Dark mode, RTL toggle, form validation, blog filters,
+                      countdown timer
+
+================================================================================
+  © 2026 TimeCraft Repairs. Template for educational and commercial use.
+================================================================================

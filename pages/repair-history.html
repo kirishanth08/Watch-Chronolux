@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChronoLux | Repair History</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/portal.css">
+</head>
+<body class="portal-page client-page">
+  <div class="portal-shell">
+    <aside class="portal-sidebar">
+      <a href="index.html" class="brand"><i class="fas fa-gem"></i> ChronoLux</a>
+      <div class="nav-section">
+        <span class="nav-section-title">Client Portal</span>
+        <a class="nav-link" href="user-dashboard.html"><i class="fas fa-home"></i> Dashboard</a>
+        <a class="nav-link" href="submit-repair.html"><i class="fas fa-tools"></i> Submit Repair</a>
+        <a class="nav-link" href="track-repair.html"><i class="fas fa-map-marked-alt"></i> Track Repair</a>
+        <a class="nav-link active" href="repair-history.html"><i class="fas fa-history"></i> Repair History</a>
+        <a class="nav-link" href="payments.html"><i class="fas fa-credit-card"></i> Payments</a>
+        <a class="nav-link" href="appointments.html"><i class="fas fa-calendar-alt"></i> Appointments</a>
+        <a class="nav-link" href="saved-items.html"><i class="fas fa-heart"></i> Saved Items</a>
+        <a class="nav-link" href="notifications.html"><i class="fas fa-bell"></i> Notifications</a>
+        <a class="nav-link" href="support.html"><i class="fas fa-headset"></i> Support</a>
+        <a class="nav-link" href="profile.html"><i class="fas fa-user"></i> Profile</a>
+        <a class="nav-link" href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+        <a class="nav-link" href="login.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+      </div>
+    </aside>
+
+    <main class="portal-content">
+      <div class="portal-topbar client-topbar">
+        <div>
+          <button class="btn-gold btn-sm sidebar-toggle"><i class="fas fa-bars"></i> Menu</button>
+          <span class="client-eyebrow"><i class="fas fa-clock-rotate-left"></i> Service archive</span>
+          <h2>Repair History</h2>
+          <p class="client-topbar-copy">Search previous repairs, warranties, invoices, and service notes.</p>
+        </div>
+        <div class="client-topbar-actions">
+          <button class="client-icon-btn" type="button" data-client-theme><i class="fas fa-moon"></i><span>Dark</span></button>
+          <button class="client-icon-btn" type="button" data-client-rtl><i class="fas fa-right-left"></i><span>RTL</span></button>
+          <a class="client-profile-chip" href="profile.html"><span class="client-avatar" data-client-initials>SL</span><span data-client-name>Sofia Laurent</span></a>
+        </div>
+      </div>
+
+      <div class="portal-card">
+        <div class="card-body">
+          <div class="client-toolbar">
+            <div>
+              <h4 class="card-title mb-1">All Repairs</h4>
+              <p class="client-muted">Your item service record at ChronoLux.</p>
+            </div>
+            <input type="text" class="form-control" placeholder="Search history" data-client-search="[data-history-row]">
+          </div>
+          <div class="table-responsive">
+            <table class="portal-table">
+              <thead><tr><th>Repair ID</th><th>Item</th><th>Service</th><th>Date</th><th>Status</th><th>Amount</th><th>Action</th></tr></thead>
+              <tbody>
+                <tr data-history-row><td>#CR-2048</td><td>Rolex Submariner</td><td>Movement Service</td><td>06 Jul 2026</td><td><span class="client-status">Under Repair</span></td><td>GBP 1,850</td><td><button class="admin-action-btn" data-client-action="Repair details opened">View</button></td></tr>
+                <tr data-history-row><td>#CR-1894</td><td>Cartier Diamond Ring</td><td>Resizing</td><td>11 Jun 2026</td><td><span class="client-status success">Completed</span></td><td>GBP 420</td><td><button class="admin-action-btn" data-client-action="Warranty note opened">Warranty</button></td></tr>
+                <tr data-history-row><td>#CR-1762</td><td>Gold Bracelet</td><td>Clasp Repair</td><td>02 May 2026</td><td><span class="client-status success">Completed</span></td><td>GBP 310</td><td><button class="admin-action-btn" data-client-action="Invoice downloaded">Invoice</button></td></tr>
+                <tr data-history-row><td>#CR-1620</td><td>Patek Philippe Calatrava</td><td>Annual Check</td><td>14 Mar 2026</td><td><span class="client-status success">Completed</span></td><td>GBP 680</td><td><button class="admin-action-btn" data-client-action="Service notes opened">Notes</button></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="../assets/js/portal.js"></script>
+  <script src="../assets/js/client-portal.js"></script>
+</body>
+</html>

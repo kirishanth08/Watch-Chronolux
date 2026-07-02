@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description"
+            content="ChronoLux - Mayfair's premier luxury watch and fine jewellery atelier. Expert restoration, haute horology servicing, and bespoke care for Rolex, Omega, Cartier, and Patek Philippe since 1992.">
+        <title>ChronoLux | Luxury Watch &amp; Fine Jewellery Atelier - London</title>
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Libre+Baskerville:wght@400;700&display=swap"
+            rel="stylesheet">
+
+        <!-- Bootstrap 5 -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+        <!-- Custom Styles -->
+        <link rel="stylesheet" href="../assets/css/style.css">
+        <link rel="stylesheet" href="../assets/css/dark-mode.css">
+        <link rel="stylesheet" href="../assets/css/rtl.css">
+
+        <!-- JSON-LD Structured Data -->
+        <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "JewelryStore",
+    "name": "ChronoLux",
+    "description": "Premium luxury watch and fine jewellery atelier offering haute horology servicing, bespoke restoration, and white-glove care in Mayfair, London.",
+    "url": "https://chronolux.com",
+    "telephone": "+44-20-7946-0958",
+    "email": "hello@chronolux.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "48 Bond Street",
+      "addressLocality": "London",
+      "postalCode": "W1S 4QT",
+      "addressCountry": "GB"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "10:00",
+        "closes": "16:00"
+      }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Repair Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Battery Replacement" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Watch Servicing" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ring Resizing" } }
+      ]
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "127"
+    }
+  }
+  </script>
+    </head>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar navbar-expand-lg site-navbar" aria-label="Main navigation">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-gem me-2" aria-hidden="true"></i>ChronoLux
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="homeDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Home
+                        </a>
+
+                        <ul class="dropdown-menu">
+
+                            <li>
+                                <a class="dropdown-item" href="index.html">
+                                    Home 1
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item" href="home-2.html">
+                                    Home 2
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="navbar-controls">
+                    <a href="booking.html" class="btn-gold me-2 d-none d-lg-inline-flex">Book Consultation</a>
+                    <a href="login.html" class="btn-outline-gold me-2 d-none d-lg-inline-flex">Login</a>
+                    <a href="signup.html" class="btn-outline-gold me-2 d-none d-lg-inline-flex">Register</a>
+                    <button id="themeToggle" class="theme-toggle" aria-label="Switch to dark mode" type="button">
+                        <i class="fas fa-moon" aria-hidden="true"></i>
+                    </button>
+                    <button id="rtlToggle" class="rtl-toggle" aria-label="Toggle RTL direction">
+                        <i class="fa-solid fa-right-left"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HOME PAGE 2 HERO ===== -->
+    <section class="hero-two section-padding" aria-labelledby="hero-two-heading">
+        <div class="container">
+            <div class="row align-items-center g-5">
+
+                <!-- Left Content -->
+                <div class="col-lg-6">
+
+                    <span class="section-label text-gold">
+                        Luxury Watch & Jewellery Care Since 1992
+                    </span>
+
+                    <h1 id="hero-two-heading" class="display-4 fw-bold mt-3">
+                        Precision Restoration for Timeless Treasures
+                    </h1>
+
+                    <p class="lead mt-4">
+                        Whether it's a treasured heirloom, a luxury Swiss timepiece,
+                        or an elegant piece of fine jewellery, our master craftsmen
+                        restore every detail with unmatched precision and care.
+                    </p>
+
+                    <div class="d-flex flex-wrap gap-3 mt-4">
+
+                        <a href="booking.html" class="btn-gold">
+                            Book Consultation
+                        </a>
+
+                        <a href="pricing.html" class="btn-outline-gold">
+                            View Pricing
+                        </a>
+
+                    </div>
+
+                    <div class="row mt-5">
+
+                        <div class="col-6">
+                            <div class="hero-feature">
+                                <i class="fas fa-check-circle text-gold"></i>
+                                <span>Certified Master Technicians</span>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="hero-feature">
+                                <i class="fas fa-check-circle text-gold"></i>
+                                <span>30+ Years of Excellence</span>
+                            </div>
+                        </div>
+
+                        <div class="col-6 mt-3">
+                            <div class="hero-feature">
+                                <i class="fas fa-check-circle text-gold"></i>
+                                <span>Same-Day Battery Service</span>
+                            </div>
+                        </div>
+
+                        <div class="col-6 mt-3">
+                            <div class="hero-feature">
+                                <i class="fas fa-check-circle text-gold"></i>
+                                <span>Warranty on Repairs</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Right Image -->
+
+                <div class="col-lg-6">
+
+                    <div class="hero-two-image position-relative">
+
+                        <img src="../hero-image.png.png" class="img-fluid rounded-4 shadow-lg" alt="Luxury Watch">
+
+                        <div class="experience-card">
+
+                            <h2>30+</h2>
+
+                            <p>
+                                Years of Craftsmanship
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BRANDS WE SERVICE ===== -->
+    <section class="section-padding brand-showcase" aria-labelledby="brands-heading">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <span class="section-label">
+                    Trusted By Luxury Brands
+                </span>
+
+                <h2 id="brands-heading">
+                    Brands We Service
+                </h2>
+
+                <p>
+                    Our master technicians are experienced in servicing and restoring
+                    the world's most prestigious watch and jewellery brands using
+                    manufacturer-approved techniques and precision tools.
+                </p>
+
+            </div>
+
+            <div class="row g-4 mt-4">
+
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="brand-card">
+                        <i class="fas fa-crown"></i>
+                        <h5>Rolex</h5>
+                        <span>Swiss Luxury Watches</span>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="brand-card">
+                        <i class="fas fa-clock"></i>
+                        <h5>Omega</h5>
+                        <span>Precision Timepieces</span>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="brand-card">
+                        <i class="fas fa-gem"></i>
+                        <h5>Cartier</h5>
+                        <span>Luxury Jewellery</span>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="brand-card">
+                        <i class="fas fa-stopwatch"></i>
+                        <h5>Patek Philippe</h5>
+                        <span>Luxury Horology</span>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="brand-card">
+                        <i class="fas fa-business-time"></i>
+                        <h5>TAG Heuer</h5>
+                        <span>Sports Watches</span>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="brand-card">
+                        <i class="fas fa-award"></i>
+                        <h5>Breitling</h5>
+                        <span>Luxury Chronographs</span>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="brand-card">
+                        <i class="fas fa-gem"></i>
+                        <h5>Tissot</h5>
+                        <span>Swiss Heritage</span>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="brand-card">
+                        <i class="fas fa-star"></i>
+                        <h5>Longines</h5>
+                        <span>Classic Luxury</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ===== PRICING PREVIEW ===== -->
+    <section class="section-padding pricing-preview" aria-labelledby="pricing-heading">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <span class="section-label">
+                    Transparent Pricing
+                </span>
+
+                <h2 id="pricing-heading">
+                    Service Packages
+                </h2>
+
+                <p>
+                    Choose from our carefully designed service packages or request
+                    a bespoke quotation tailored to your luxury timepiece or jewellery.
+                </p>
+
+            </div>
+
+            <div class="row g-4 mt-4">
+
+                <!-- Package 1 -->
+
+                <div class="col-lg-4">
+
+                    <div class="pricing-card">
+
+                        <h4>Essential Care</h4>
+
+                        <div class="price">
+
+                            £45
+
+                        </div>
+
+                        <p class="pricing-subtitle">
+                            Perfect for routine maintenance.
+                        </p>
+
+                        <ul class="pricing-list">
+
+                            <li>
+                                <i class="fas fa-check"></i>
+                                Battery Replacement
+                            </li>
+
+                            <li>
+                                <i class="fas fa-check"></i>
+                                Pressure Testing
+                            </li>
+
+                            <li>
+                                <i class="fas fa-check"></i>
+                                Seal Inspection
+                            </li>
+
+                            <li>
+                                <i class="fas fa-check"></i>
+                                Exterior Cleaning
+                            </li>
+
+                        </ul>
+
+                        <a href="booking.html" class="btn-outline-gold w-100">
+                            Book Service
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- Package 2 -->
+
+                <div class="col-lg-4">
+
+                    <div class="pricing-card featured">
+
+                        <span class="featured-badge">
+
+                            Most Popular
+
+                        </span>
+
+                        <h4>Premium Care</h4>
+
+                        <div class="price">
+
+                            £250
+
+                        </div>
+
+                        <p class="pricing-subtitle">
+
+                            Complete servicing for luxury watches.
+
+                        </p>
+
+                        <ul class="pricing-list">
+
+                            <li>
+                                <i class="fas fa-check"></i>
+                                Complete Movement Overhaul
+                            </li>
+
+                            <li>
+                                <i class="fas fa-check"></i>
+                                Ultrasonic Cleaning
+                            </li>
+
+                            <li>
+                                <i class="fas fa-check"></i>
+                                Lubrication
+                            </li>
+
+                            <li>
+                                <i class="fas fa-check"></i>
+                                Accuracy Regulation
+                            </li>
+
+                            <li>
+                                <i class="fas fa-check"></i>
+                                12-Month Warranty
+                            </li>
+
+                        </ul>
+
+                        <a href="booking.html" class="btn-gold w-100">
+                            Book Service
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- Package 3 -->
+
+                <div class="col-lg-4">
+
+                    <div class="pricing-card">
+
+                        <h4>Bespoke Care</h4>
+
+                        <div class="price">
+
+                            Quote
+
+                        </div>
+
+                        <p class="pricing-subtitle">
+
+                            For luxury jewellery & vintage restoration.
+
+                        </p>
+
+                        <ul class="pricing-list">
+
+                            <li>
+                                <i class="fas fa-check"></i>
+                                Jewellery Restoration
+                            </li>
+
+                            <li>
+                                <i class="fas fa-check"></i>
+                                Ring Resizing
+                            </li>
+
+                            <li>
+                                <i class="fas fa-check"></i>
+                                Diamond Setting
+                            </li>
+
+                            <li>
+                                <i class="fas fa-check"></i>
+                                Custom Consultation
+                            </li>
+
+                        </ul>
+
+                        <a href="contact.html" class="btn-outline-gold w-100">
+                            Request Quote
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ===== PREMIUM CTA ===== -->
+
+    <section class="premium-cta">
+
+        <div class="container">
+
+            <div class="row align-items-center g-5">
+
+                <!-- Left Content -->
+
+                <div class="col-lg-7">
+
+                    <span class="section-label text-gold">
+                        Private Consultation
+                    </span>
+
+                    <h2>
+                        Entrust Your Luxury Timepiece to
+                        Certified Master Craftsmen
+                    </h2>
+
+                    <p>
+                        Whether your treasured watch requires a complete mechanical
+                        overhaul, your jewellery needs expert restoration, or you're
+                        seeking professional advice before servicing, our specialists
+                        are here to help.
+                    </p>
+
+                    <div class="cta-features">
+
+                        <div>
+                            <i class="fas fa-check-circle"></i>
+                            Free Initial Consultation
+                        </div>
+
+                        <div>
+                            <i class="fas fa-check-circle"></i>
+                            Transparent Pricing
+                        </div>
+
+                        <div>
+                            <i class="fas fa-check-circle"></i>
+                            Manufacturer Approved Tools
+                        </div>
+
+                        <div>
+                            <i class="fas fa-check-circle"></i>
+                            12-Month Service Warranty
+                        </div>
+
+                    </div>
+
+                    <div class="mt-4">
+
+                        <a href="booking.html" class="btn-gold me-3">
+                            Book Consultation
+                        </a>
+
+                        <a href="contact.html" class="btn-outline-gold">
+                            Contact Us
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- Right -->
+
+                <div class="col-lg-5">
+
+                    <div class="cta-card">
+
+                        <div class="cta-icon">
+
+                            <i class="fas fa-clock"></i>
+
+                        </div>
+
+                        <h3>Need Urgent Service?</h3>
+
+                        <p>
+
+                            Same-day battery replacement,
+                            strap adjustment, and professional
+                            inspection are available by appointment.
+
+                        </p>
+
+                        <hr>
+
+                        <h5 class="mb-3">
+
+                            Opening Hours
+
+                        </h5>
+
+                        <ul>
+
+                            <li>Mon – Fri : 9:00 AM – 6:00 PM</li>
+
+                            <li>Saturday : 10:00 AM – 4:00 PM</li>
+
+                            <li>Sunday : Closed</li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ===== FAQ SECTION ===== -->
+
+    <section class="section-padding faq-section" aria-labelledby="faq-heading">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <span class="section-label">
+                    Frequently Asked Questions
+                </span>
+
+                <h2 id="faq-heading">
+                    Everything You Need to Know
+                </h2>
+
+                <p>
+                    Find answers to the most common questions about our watch and
+                    jewellery repair services.
+                </p>
+
+            </div>
+
+            <div class="row justify-content-center">
+
+                <div class="col-lg-10">
+
+                    <div class="accordion" id="faqAccordion">
+
+                        <!-- FAQ 1 -->
+
+                        <div class="accordion-item">
+
+                            <h2 class="accordion-header">
+
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faqOne">
+
+                                    How long does a complete watch service take?
+
+                                </button>
+
+                            </h2>
+
+                            <div id="faqOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+
+                                <div class="accordion-body">
+
+                                    A complete mechanical watch service typically
+                                    takes between two and four weeks depending on
+                                    the movement, condition, and availability of
+                                    genuine replacement parts.
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- FAQ 2 -->
+
+                        <div class="accordion-item">
+
+                            <h2 class="accordion-header">
+
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faqTwo">
+
+                                    Do you repair vintage watches?
+
+                                </button>
+
+                            </h2>
+
+                            <div id="faqTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+
+                                <div class="accordion-body">
+
+                                    Yes. Our craftsmen specialize in restoring
+                                    vintage and heirloom timepieces while preserving
+                                    their originality and historical value.
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- FAQ 3 -->
+
+                        <div class="accordion-item">
+
+                            <h2 class="accordion-header">
+
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faqThree">
+
+                                    Are my valuables insured while in your care?
+
+                                </button>
+
+                            </h2>
+
+                            <div id="faqThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+
+                                <div class="accordion-body">
+
+                                    Absolutely. Every item entrusted to us is
+                                    securely stored and fully insured throughout
+                                    the repair and restoration process.
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- FAQ 4 -->
+
+                        <div class="accordion-item">
+
+                            <h2 class="accordion-header">
+
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faqFour">
+
+                                    Can I request a quotation before booking?
+
+                                </button>
+
+                            </h2>
+
+                            <div id="faqFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+
+                                <div class="accordion-body">
+
+                                    Yes. Simply contact us or schedule a free
+                                    consultation to receive a transparent estimate
+                                    before any work begins.
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- FAQ 5 -->
+
+                        <div class="accordion-item">
+
+                            <h2 class="accordion-header">
+
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faqFive">
+
+                                    Do your repairs include a warranty?
+
+                                </button>
+
+                            </h2>
+
+                            <div id="faqFive" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+
+                                <div class="accordion-body">
+
+                                    Yes. All completed repairs and servicing include
+                                    a workmanship warranty for your peace of mind.
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer" aria-label="Site footer">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Column 1: About -->
+                <div class="col-md-6 col-lg-3">
+                    <h5><i class="fas fa-gem me-2" aria-hidden="true"></i>ChronoLux</h5>
+                    <p>Mayfair's premier atelier for luxury watch and fine jewellery restoration since 1992. White-glove
+                        service, master craftsmanship, and uncompromising standards.</p>
+                    <div class="footer-social mt-3">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <!-- Column 2: Quick Links -->
+                <div class="col-md-6 col-lg-3">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <!-- Column 3: Services -->
+                <div class="col-md-6 col-lg-3">
+                    <h5>Our Services</h5>
+                    <ul>
+                        <li><a href="services.html">Battery Replacement</a></li>
+                        <li><a href="services.html">Watch Servicing</a></li>
+                        <li><a href="services.html">Strap Fitting</a></li>
+                        <li><a href="services.html">Ring Resizing</a></li>
+                        <li><a href="services.html">Jewellery Cleaning</a></li>
+                        <li><a href="booking.html">Book Consultation</a></li>
+                    </ul>
+                </div>
+                <!-- Column 4: Contact -->
+                <div class="col-md-6 col-lg-3">
+                    <h5>Contact Us</h5>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt me-2" aria-hidden="true"></i>48 Bond Street, London W1S 4QT
+                        </li>
+                        <li><i class="fas fa-phone me-2" aria-hidden="true"></i><a href="tel:+442079460958">+44 20 7946
+                                0958</a></li>
+                        <li><i class="fas fa-envelope me-2" aria-hidden="true"></i><a
+                                href="mailto:hello@chronolux.com">hello@chronolux.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ChronoLux. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../assets/js/main.js"></script>
+    </body>
+
+    </html>

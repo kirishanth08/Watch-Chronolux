@@ -1,0 +1,307 @@
+/**
+ * Dark Mode Theme Overrides
+ * Activated via data-theme="dark" on <html>
+ */
+
+[data-theme="dark"] {
+  --color-primary: #D4A843;
+  --color-primary-dark: #B8860B;
+  --color-primary-light: #E8C468;
+  --color-bg: #121212;
+  --color-text: #E8E8E8;
+  --color-section: #1E1E1E;
+  --color-card-bg: #2A2A2A;
+  --color-footer-bg: #0A0A0A;
+  --color-footer-text: #E8E8E8;
+  --color-muted: #A0A0A0;
+  --color-border: #3A3A3A;
+  --color-overlay: rgba(0, 0, 0, 0.7);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+/* Dark mode navbar */
+[data-theme="dark"] .site-navbar {
+  background-color: var(--color-bg);
+  border-bottom-color: var(--color-border);
+}
+
+/* Dark mode accordion */
+[data-theme="dark"] .accordion-button {
+  background-color: var(--color-card-bg);
+  color: var(--color-text);
+}
+
+[data-theme="dark"] .accordion-button:not(.collapsed) {
+  background-color: rgba(212, 168, 67, 0.15);
+  color: var(--color-primary);
+}
+
+/* Dark mode form inputs */
+[data-theme="dark"] .form-control,
+[data-theme="dark"] .form-select {
+  background-color: var(--color-card-bg);
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+/* Dark mode Bootstrap overrides */
+[data-theme="dark"] .navbar-toggler {
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .navbar-toggler-icon {
+  filter: invert(1);
+}
+
+[data-theme="dark"] .btn-close {
+  filter: invert(1);
+}
+
+/* Dark mode page header stays dark gradient */
+[data-theme="dark"] .page-header {
+  background: linear-gradient(135deg, #0A0A0A 0%, #1E1E1E 100%);
+}
+
+/* Dark mode CTA banner */
+[data-theme="dark"] .cta-banner {
+  background: linear-gradient(135deg, #0A0A0A 0%, #2A2A2A 50%, #0A0A0A 100%);
+  background-size: 200% 200%;
+}
+
+/* Dark mode hero overlay */
+[data-theme="dark"] .hero-overlay {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.4) 100%);
+}
+
+/* Dark mode pricing table header */
+[data-theme="dark"] .pricing-table thead {
+  background-color: var(--color-primary-dark);
+}
+
+/* Dark mode theme toggle icon swap handled in JS */
+[data-theme="dark"] .theme-toggle {
+  background-color: rgba(212, 168, 67, 0.1);
+  border-color: var(--color-primary);
+}
+
+.accordion-body,
+.accordion-body p,
+.accordion-body span,
+.accordion-body li {
+  color: var(--color-text);
+}
+
+/* Dark Mode */
+[data-theme="dark"] .accordion-body,
+[data-theme="dark"] .accordion-body p,
+[data-theme="dark"] .accordion-body span,
+[data-theme="dark"] .accordion-body li {
+  color: var(--color-text);
+}
+
+/* ---------- Dark Mode Form Fix ---------- */
+
+[data-theme="dark"] .form-control,
+[data-theme="dark"] .form-select,
+[data-theme="dark"] textarea {
+  background-color: #2b2b2b !important;
+  color: #ffffff !important;
+  border: 1px solid #555 !important;
+}
+
+[data-theme="dark"] .form-control::placeholder,
+[data-theme="dark"] textarea::placeholder {
+  color: #d0d0d0 !important;
+  opacity: 1;
+}
+
+[data-theme="dark"] .form-label,
+[data-theme="dark"] label {
+  color: #ffffff !important;
+}
+
+/*====================================================
+HOME PAGE 2 DARK MODE
+====================================================*/
+
+/* Hero */
+
+[data-theme="dark"] .hero-two {
+  background: var(--color-bg);
+}
+
+[data-theme="dark"] .hero-two h1 {
+  color: var(--color-text);
+}
+
+[data-theme="dark"] .hero-two p {
+  color: var(--color-muted);
+}
+
+[data-theme="dark"] .hero-feature {
+  color: var(--color-text);
+}
+
+[data-theme="dark"] .experience-card {
+  background: var(--color-card-bg);
+  color: var(--color-text);
+}
+
+/* Brands */
+
+[data-theme="dark"] .brand-showcase {
+  background: var(--color-section);
+}
+
+[data-theme="dark"] .brand-card {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+}
+
+[data-theme="dark"] .brand-card h5 {
+  color: var(--color-text);
+}
+
+[data-theme="dark"] .brand-card span {
+  color: var(--color-muted);
+}
+
+/* Pricing */
+
+[data-theme="dark"] .pricing-preview {
+  background: var(--color-bg);
+}
+
+[data-theme="dark"] .pricing-card {
+  background: var(--color-card-bg);
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .pricing-card h4 {
+  color: var(--color-text);
+}
+
+[data-theme="dark"] .pricing-subtitle {
+  color: var(--color-muted);
+}
+
+[data-theme="dark"] .pricing-list li {
+  color: var(--color-text);
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* CTA */
+
+[data-theme="dark"] .premium-cta {
+  background: #0d0d0d;
+}
+
+[data-theme="dark"] .premium-cta h2 {
+  color: #fff;
+}
+
+[data-theme="dark"] .premium-cta p {
+  color: var(--color-muted);
+}
+
+[data-theme="dark"] .cta-card {
+  background: var(--color-card-bg);
+  color: var(--color-text);
+}
+
+[data-theme="dark"] .cta-card h3,
+[data-theme="dark"] .cta-card h5 {
+  color: var(--color-text);
+}
+
+[data-theme="dark"] .cta-card li {
+  color: var(--color-text);
+}
+
+/* FAQ */
+
+[data-theme="dark"] .faq-section {
+  background: var(--color-section);
+}
+
+[data-theme="dark"] .faq-section .accordion-item {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+}
+
+[data-theme="dark"] .faq-section .accordion-button {
+  background: var(--color-card-bg);
+  color: var(--color-text);
+}
+
+[data-theme="dark"] .faq-section .accordion-button:not(.collapsed) {
+  background: rgba(212, 168, 67, .15);
+  color: var(--color-primary);
+}
+
+[data-theme="dark"] .faq-section .accordion-body {
+  background: var(--color-card-bg);
+  color: var(--color-text);
+}
+
+/*=====================================================
+CLIENT PORTAL DARK MODE VISIBILITY FIX
+=====================================================*/
+
+[data-theme="dark"] .client-page .portal-table,
+[data-theme="dark"] .client-page .portal-table th,
+[data-theme="dark"] .client-page .portal-table td {
+
+  color: #f5f0e6 !important;
+
+}
+
+[data-theme="dark"] .client-page .portal-table thead th {
+
+  background: #232323;
+
+}
+
+[data-theme="dark"] .client-page .portal-table tbody tr {
+
+  background: #1b1b1b;
+
+}
+
+[data-theme="dark"] .client-page .portal-table tbody tr:hover {
+
+  background: #252525;
+
+}
+
+[data-theme="dark"] .client-page .client-kpi .value,
+
+[data-theme="dark"] .client-page .client-toolbar h4,
+
+[data-theme="dark"] .client-page .client-soft-panel strong,
+
+[data-theme="dark"] .client-page .faq-question {
+
+  color: #ffffff !important;
+
+}
+
+[data-theme="dark"] .client-page .client-muted,
+
+[data-theme="dark"] .client-page .client-soft-panel p,
+
+[data-theme="dark"] .client-page .faq-answer {
+
+  color: #cfcfcf !important;
+
+}
+
+[data-theme="dark"] .client-page .client-soft-panel {
+
+  background: #202020;
+
+}

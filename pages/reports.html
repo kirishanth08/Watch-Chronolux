@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChronoLux | Reports</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/portal.css">
+</head>
+<body class="portal-page admin-page">
+  <div class="portal-shell">
+    <aside class="portal-sidebar">
+      <a href="index.html" class="brand"><i class="fas fa-gem"></i> ChronoLux</a>
+      <div class="nav-section">
+        <span class="nav-section-title">Admin Panel</span>
+        <a class="nav-link" href="admin-dashboard.html"><i class="fas fa-chart-line"></i> Dashboard</a>
+        <a class="nav-link" href="customers.html"><i class="fas fa-users"></i> Customers</a>
+        <a class="nav-link" href="repair-requests.html"><i class="fas fa-tools"></i> Repair Requests</a>
+        <a class="nav-link" href="admin-appointments.html"><i class="fas fa-calendar-check"></i> Appointments</a>
+        <a class="nav-link" href="technicians.html"><i class="fas fa-user-cog"></i> Technicians</a>
+        <a class="nav-link" href="payments-admin.html"><i class="fas fa-credit-card"></i> Payments</a>
+        <a class="nav-link active" href="reports.html"><i class="fas fa-file-alt"></i> Reports</a>
+        <a class="nav-link" href="admin-settings.html"><i class="fas fa-cog"></i> Settings</a>
+        <a class="nav-link" href="login.html#admin"><i class="fas fa-sign-out-alt"></i> Logout</a>
+      </div>
+    </aside>
+    <main class="portal-content">
+      <div class="portal-topbar">
+        <div>
+          <button class="btn-gold btn-sm sidebar-toggle"><i class="fas fa-bars"></i> Menu</button>
+          <span class="admin-eyebrow"><i class="fas fa-chart-pie"></i> Business intelligence</span>
+          <h2>Reports</h2>
+          <p class="admin-topbar-copy">Review repair volume, revenue, service mix, and team performance.</p>
+        </div>
+        <div class="admin-topbar-actions">
+          <a class="admin-icon-btn" href="index.html"><i class="fas fa-globe"></i><span>View Site</span></a>
+          <button class="admin-icon-btn" type="button" data-admin-theme><i class="fas fa-moon"></i><span>Dark</span></button>
+          <button class="admin-icon-btn" type="button" data-admin-rtl><i class="fas fa-right-left"></i><span>RTL</span></button>
+          <a class="admin-profile-chip" href="admin-settings.html"><span class="admin-avatar" data-admin-initials>OD</span><span data-admin-name>Operations Director</span></a>
+          <button class="btn-outline-gold btn-sm" data-admin-action="CSV export prepared"><i class="fas fa-file-csv"></i> CSV</button>
+          <button class="btn-gold btn-sm" data-admin-action="PDF report prepared"><i class="fas fa-file-pdf"></i> PDF</button>
+        </div>
+      </div>
+
+      <div class="row g-4 mb-4">
+        <div class="col-md-3"><div class="admin-kpi"><div><div class="value">42</div><div class="label">Repairs completed</div></div><i class="fas fa-check"></i></div></div>
+        <div class="col-md-3"><div class="admin-kpi"><div><div class="value">GBP 12.4k</div><div class="label">Monthly revenue</div></div><i class="fas fa-sterling-sign"></i></div></div>
+        <div class="col-md-3"><div class="admin-kpi"><div><div class="value">4.9</div><div class="label">Average rating</div></div><i class="fas fa-star"></i></div></div>
+        <div class="col-md-3"><div class="admin-kpi"><div><div class="value">3.2d</div><div class="label">Average turnaround</div></div><i class="fas fa-clock"></i></div></div>
+      </div>
+
+      <div class="admin-grid">
+        <section class="portal-card admin-span-6">
+          <div class="card-body">
+            <h4 class="card-title">Top Services</h4>
+            <div class="admin-chart mt-4">
+              <div class="admin-chart-row"><span>Mechanical overhaul</span><div class="admin-chart-track"><span style="width: 86%"></span></div><strong>86%</strong></div>
+              <div class="admin-chart-row"><span>Battery service</span><div class="admin-chart-track"><span style="width: 64%"></span></div><strong>64%</strong></div>
+              <div class="admin-chart-row"><span>Ring resizing</span><div class="admin-chart-track"><span style="width: 48%"></span></div><strong>48%</strong></div>
+              <div class="admin-chart-row"><span>Jewellery cleaning</span><div class="admin-chart-track"><span style="width: 36%"></span></div><strong>36%</strong></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="portal-card admin-span-6">
+          <div class="card-body">
+            <h4 class="card-title">Revenue by Week</h4>
+            <div class="admin-chart mt-4">
+              <div class="admin-chart-row"><span>Week 1</span><div class="admin-chart-track"><span style="width: 58%"></span></div><strong>GBP 2.8k</strong></div>
+              <div class="admin-chart-row"><span>Week 2</span><div class="admin-chart-track"><span style="width: 76%"></span></div><strong>GBP 3.7k</strong></div>
+              <div class="admin-chart-row"><span>Week 3</span><div class="admin-chart-track"><span style="width: 92%"></span></div><strong>GBP 4.4k</strong></div>
+              <div class="admin-chart-row"><span>Week 4</span><div class="admin-chart-track"><span style="width: 42%"></span></div><strong>GBP 1.5k</strong></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="portal-card admin-span-12">
+          <div class="card-body">
+            <div class="admin-card-header">
+              <div><h4>Operational Notes</h4><p class="admin-muted">Summary generated from the current demo data.</p></div>
+            </div>
+            <div class="admin-feature-list">
+              <div class="admin-feature-item"><div><strong>Mechanical servicing leads revenue</strong><p class="admin-muted">High-value watch work accounts for most of this month&apos;s billing.</p></div><span class="admin-badge paid">Strong</span></div>
+              <div class="admin-feature-item"><div><strong>Turnaround improved</strong><p class="admin-muted">Average completion time moved below four days for standard jobs.</p></div><span class="admin-badge completed">Healthy</span></div>
+              <div class="admin-feature-item"><div><strong>Parts delays remain visible</strong><p class="admin-muted">Vintage movements and sapphire crystals are the main stock constraints.</p></div><span class="admin-badge pending">Watch</span></div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+  <script src="../assets/js/portal.js"></script>
+  <script src="../assets/js/admin-panel.js"></script>
+</body>
+</html>

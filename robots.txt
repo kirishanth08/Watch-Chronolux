@@ -1,0 +1,5 @@
+# robots.txt — ChronoLux
+User-agent: *
+Allow: /
+
+Sitemap: https://chronolux.com/sitemap.xml

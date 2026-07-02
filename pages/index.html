@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="ChronoLux - Mayfair's premier luxury watch and fine jewellery atelier. Expert restoration, haute horology servicing, and bespoke care for Rolex, Omega, Cartier, and Patek Philippe since 1992.">
+  <title>ChronoLux | Luxury Watch &amp; Fine Jewellery Atelier - London</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Libre+Baskerville:wght@400;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "JewelryStore",
+    "name": "ChronoLux",
+    "description": "Premium luxury watch and fine jewellery atelier offering haute horology servicing, bespoke restoration, and white-glove care in Mayfair, London.",
+    "url": "https://chronolux.com",
+    "telephone": "+44-20-7946-0958",
+    "email": "hello@chronolux.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "48 Bond Street",
+      "addressLocality": "London",
+      "postalCode": "W1S 4QT",
+      "addressCountry": "GB"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "10:00",
+        "closes": "16:00"
+      }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Repair Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Battery Replacement" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Watch Servicing" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ring Resizing" } }
+      ]
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "127"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+  <!-- Skip Navigation Link (Accessibility) -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar navbar-expand-lg site-navbar" aria-label="Main navigation">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <i class="fas fa-gem me-2" aria-hidden="true"></i>ChronoLux
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+        aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" id="homeDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Home
+            </a>
+
+            <ul class="dropdown-menu">
+
+              <li>
+                <a class="dropdown-item" href="index.html">
+                  Home 1
+                </a>
+              </li>
+
+              <li>
+                <a class="dropdown-item" href="home-2.html">
+                  Home 2
+                </a>
+              </li>
+
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="navbar-controls">
+          <a href="booking.html" class="btn-gold me-2 d-none d-lg-inline-flex">Book Consultation</a>
+          <a href="login.html" class="btn-outline-gold me-2 d-none d-lg-inline-flex">Login</a>
+          <a href="signup.html" class="btn-outline-gold me-2 d-none d-lg-inline-flex">Register</a>
+          <button id="themeToggle" class="theme-toggle" aria-label="Switch to dark mode" type="button">
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </button>
+          <button id="rtlToggle" class="rtl-toggle" aria-label="Toggle RTL direction">
+            <i class="fa-solid fa-right-left"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero-section" aria-label="Welcome banner">
+      <div class="hero-bg">
+        <img src="../hero-image.png.png"
+          alt="Luxury gold Swiss watch and bracelet displayed on black marble with warm golden lighting" width="1920"
+          height="1080" loading="eager">
+      </div>
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <div class="row">
+          <div class="col-lg-7">
+            <span class="section-label text-gold">Mayfair Atelier | Est. 1992</span>
+            <h1>Where Time Meets Luxury</h1>
+            <p>London's discerning collectors and connoisseurs trust ChronoLux for haute horology servicing, fine
+              jewellery restoration, and bespoke care - delivered with the discretion and precision your treasures
+              deserve.</p>
+            <div class="d-flex flex-wrap gap-3">
+              <a href="booking.html" class="btn-gold">Book a Consultation</a>
+              <a href="services.html" class="btn-outline-gold hero-outline-btn">Our Services</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SERVICES HIGHLIGHT ===== -->
+    <section class="section-padding" aria-labelledby="services-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Our Expertise</span>
+          <h2 id="services-heading">Bespoke Watch &amp; Jewellery Services</h2>
+          <p>From haute horology overhauls to delicate gemstone settings - every commission is entrusted to
+            master-certified artisans in our Mayfair atelier.</p>
+        </div>
+        <div class="row g-4">
+          <!-- Service Card 1 -->
+          <div class="col-md-6 col-lg-4">
+            <article class="service-card">
+              <div class="service-media">
+                <img src="../Battery.png"
+                  alt="Luxury watch after service showing a premium timepiece in a repair workshop" loading="lazy">
+              </div>
+              <div class="card-icon"><i class="fas fa-battery-full" aria-hidden="true"></i></div>
+              <h3>Quartz Battery Service</h3>
+              <p>Precision battery replacement for luxury quartz timepieces, complete with gasket inspection and
+                pressure testing to manufacturer standards.</p>
+              <a href="service-details.html" class="btn-outline-gold btn-sm">Learn More</a>
+            </article>
+          </div>
+          <!-- Service Card 2 -->
+          <div class="col-md-6 col-lg-4">
+            <article class="service-card">
+              <div class="service-media">
+                <img src="../strap.png" alt="Watch strap and bracelet restoration in a premium atelier" loading="lazy">
+              </div>
+              <div class="card-icon"><i class="fas fa-link" aria-hidden="true"></i></div>
+              <h3>Strap &amp; Bracelet Atelier</h3>
+              <p>Bespoke strap fitting, bracelet sizing, and clasp restoration for leather, alligator, and
+                precious-metal bracelets.</p>
+              <a href="service-details.html" class="btn-outline-gold btn-sm">Learn More</a>
+            </article>
+          </div>
+          <!-- Service Card 3 -->
+          <div class="col-md-6 col-lg-4">
+            <article class="service-card">
+              <div class="service-media">
+                <img src="../service.png" alt="Luxury mechanical watch servicing in a professional horology workshop"
+                  loading="lazy">
+              </div>
+              <div class="card-icon"><i class="fas fa-cogs" aria-hidden="true"></i></div>
+              <h3>Haute Horology Servicing</h3>
+              <p>Complete mechanical and automatic overhauls - disassembly, ultrasonic cleaning, lubrication,
+                regulation, and certified pressure testing.</p>
+              <a href="service-details.html" class="btn-outline-gold btn-sm">Learn More</a>
+            </article>
+          </div>
+          <!-- Service Card 4 -->
+          <div class="col-md-6 col-lg-4">
+            <article class="service-card">
+              <div class="service-media">
+                <img src="../ring.jpeg" alt="Luxury ring resizing in a fine jewellery atelier" loading="lazy">
+              </div>
+              <div class="card-icon"><i class="fas fa-ring" aria-hidden="true"></i></div>
+              <h3>Ring Resizing &amp; Refinement</h3>
+              <p>Invisible resizing for platinum, gold, and diamond-set bands - preserving structural integrity and
+                original design lines.</p>
+              <a href="service-details.html" class="btn-outline-gold btn-sm">Learn More</a>
+            </article>
+          </div>
+          <!-- Service Card 5 -->
+          <div class="col-md-6 col-lg-4">
+            <article class="service-card">
+              <div class="service-media">
+                <img src="../assets/images/fine-jewellery.webp"
+                  alt="Fine jewellery restoration by a master jeweller in a luxury atelier" loading="lazy">
+              </div>
+              <div class="card-icon"><i class="fas fa-gem" aria-hidden="true"></i></div>
+              <h3>Fine Jewellery Restoration</h3>
+              <p>Professional ultrasonic and steam cleaning to revive the brilliance of diamonds, coloured gemstones,
+                and precious metal settings.</p>
+              <a href="service-details.html" class="btn-outline-gold btn-sm">Learn More</a>
+            </article>
+          </div>
+          <!-- Service Card 6 -->
+          <div class="col-md-6 col-lg-4">
+            <article class="service-card">
+              <div class="service-media">
+                <img src="../chain.png" alt="Gold chain clasp repair in a luxury jewellery workshop" loading="lazy">
+              </div>
+              <div class="card-icon"><i class="fas fa-chain" aria-hidden="true"></i></div>
+              <h3>Chain &amp; Clasp Restoration</h3>
+              <p>Micro-soldering, link replacement, and clasp restoration for necklaces, bracelets, and heirloom chains.
+              </p>
+              <a href="service-details.html" class="btn-outline-gold btn-sm">Learn More</a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== WHY TRUST US ===== -->
+    <section class="section-padding section-alt" aria-labelledby="trust-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Why Choose Us</span>
+          <h2 id="trust-heading">Why Trust ChronoLux</h2>
+          <p>Over three decades of uncompromising dedication to haute horology and fine jewellery excellence in the
+            heart of Mayfair.</p>
+        </div>
+        <div class="section-image mb-4">
+          <img src="../img1.png" alt="Luxury timepiece before servicing in a precision atelier" loading="lazy">
+        </div>
+        <div class="row g-4">
+          <div class="col-sm-6 col-lg-3">
+            <div class="trust-box">
+              <i class="fas fa-history" aria-hidden="true"></i>
+              <h4>30+ Years Heritage</h4>
+              <p>Generations of horological mastery passed from master watchmaker to apprentice in our Bond Street
+                atelier.</p>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <div class="trust-box">
+              <i class="fas fa-certificate" aria-hidden="true"></i>
+              <h4>Master Certified</h4>
+              <p>AWCI and NAJ certified master craftspeople with continuous training in vintage and contemporary
+                movements.</p>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <div class="trust-box">
+              <i class="fas fa-shield-alt" aria-hidden="true"></i>
+              <h4>Lifetime Care</h4>
+              <p>Every commission backed by our comprehensive workmanship guarantee and complimentary post-service
+                inspection.</p>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <div class="trust-box">
+              <i class="fas fa-search" aria-hidden="true"></i>
+              <h4>Complimentary Consultation</h4>
+              <p>Private, no-obligation assessment and transparent quotation before any work commences.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== BRAND LOGOS STRIP ===== -->
+    <section class="brand-strip" aria-label="Brands we service">
+      <div class="container">
+        <div class="row align-items-center justify-content-center g-3">
+          <div class="col-4 col-md-2">
+            <div class="brand-logo">ROLEX</div>
+          </div>
+          <div class="col-4 col-md-2">
+            <div class="brand-logo">OMEGA</div>
+          </div>
+          <div class="col-4 col-md-2">
+            <div class="brand-logo">PATEK</div>
+          </div>
+          <div class="col-4 col-md-2">
+            <div class="brand-logo">AUDEMARS</div>
+          </div>
+          <div class="col-4 col-md-2">
+            <div class="brand-logo">CARTIER</div>
+          </div>
+          <div class="col-4 col-md-2">
+            <div class="brand-logo">JAEGER</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS ===== -->
+    <section class="section-padding" aria-labelledby="reviews-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Client Stories</span>
+          <h2 id="reviews-heading">Voices of Our Distinguished Clients</h2>
+        </div>
+        <div class="section-image mb-4">
+          <img src="../img2.png" alt="Luxury watch boutique and fine jewellery service setting" loading="lazy">
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <blockquote class="testimonial-card">
+              <div class="stars" aria-label="5 out of 5 stars">
+                <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i
+                  class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i
+                  class="fas fa-star" aria-hidden="true"></i>
+              </div>
+              <p>"My vintage Omega was running minutes fast. They serviced it beautifully - runs like new and the case
+                looks immaculate."</p>
+              <footer><span class="author">James Whitmore</span><br><span class="role">Private Collector, Mayfair</span>
+              </footer>
+            </blockquote>
+          </div>
+          <div class="col-md-4">
+            <blockquote class="testimonial-card">
+              <div class="stars" aria-label="5 out of 5 stars">
+                <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i
+                  class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i
+                  class="fas fa-star" aria-hidden="true"></i>
+              </div>
+              <p>"They resized my grandmother's Art Deco diamond ring with extraordinary discretion. The join is
+                invisible - a testament to true artisan skill."</p>
+              <footer><span class="author">Sarah Chen</span><br><span class="role">Client, Knightsbridge</span></footer>
+            </blockquote>
+          </div>
+          <div class="col-md-4">
+            <blockquote class="testimonial-card">
+              <div class="stars" aria-label="5 out of 5 stars">
+                <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i
+                  class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i
+                  class="fas fa-star" aria-hidden="true"></i>
+              </div>
+              <p>"White-glove service on my Cartier Tank - battery replaced, seals tested, and returned the same
+                afternoon. The standard one expects in Mayfair."</p>
+              <footer><span class="author">David Okonkwo</span><br><span class="role">Client, Belgravia</span></footer>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TURNAROUND STRIP =====
+    <section class="turnaround-strip" aria-labelledby="turnaround-heading">
+      <div class="container">
+        <h2 id="turnaround-heading" class="text-center mb-4">Service Timelines</h2>
+        <div class="row">
+          <div class="col-md-3 col-6">
+            <div class="turnaround-item">
+              <i class="fas fa-bolt" aria-hidden="true"></i>
+              <h4>Same Day</h4>
+              <p>Battery &amp; strap changes</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="turnaround-item">
+              <i class="fas fa-clock" aria-hidden="true"></i>
+              <h4>3–5 Days</h4>
+              <p>Cleaning &amp; polishing</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="turnaround-item">
+              <i class="fas fa-tools" aria-hidden="true"></i>
+              <h4>1–2 Weeks</h4>
+              <p>Ring resizing &amp; repairs</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="turnaround-item">
+              <i class="fas fa-cog" aria-hidden="true"></i>
+              <h4>2–4 Weeks</h4>
+              <p>Full watch servicing</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <-- ===== CTA BANNER ===== -->
+    <!-- <section class="cta-banner" aria-labelledby="cta-heading">
+      <div class="container">
+        <div class="cta-visual mb-4">
+          <img src="../live1.jpeg" alt="Luxury horology workshop interior at ChronoLux atelier" loading="lazy">
+        </div>
+        <h2 id="cta-heading">Experience the ChronoLux Difference</h2>
+        <p>Private consultations available by appointment, or visit our Bond Street atelier during opening hours.</p>
+        <a href="booking.html" class="btn-gold">Reserve Your Consultation</a>
+      </div>
+    </section>  -->
+
+    <!-- ===== NEWSLETTER (Mailchimp-ready placeholder) ===== -->
+    <section class="newsletter-section" aria-labelledby="newsletter-heading">
+      <div class="container text-center">
+        <span class="section-label">Stay Updated</span>
+        <h2 id="newsletter-heading">The ChronoLux Journal</h2>
+        <p class="mb-4">Care tips, seasonal offers, and workshop news - delivered monthly.</p>
+        <!-- Mailchimp embed placeholder: replace action URL with your Mailchimp form endpoint -->
+        <form class="newsletter-form" action="https://YOUR-MAILCHIMP-URL.list-manage.com/subscribe/post" method="post"
+          target="_blank" aria-label="Newsletter signup">
+          <label for="newsletterEmail" class="visually-hidden">Email address</label>
+          <input type="email" id="newsletterEmail" name="EMAIL" placeholder="Your email address" required
+            autocomplete="email">
+          <button type="submit" class="btn-gold">Subscribe</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Column 1: About -->
+        <div class="col-md-6 col-lg-3">
+          <h5><i class="fas fa-gem me-2" aria-hidden="true"></i>ChronoLux</h5>
+          <p>Mayfair's premier atelier for luxury watch and fine jewellery restoration since 1992. White-glove service,
+            master craftsmanship, and uncompromising standards.</p>
+          <div class="footer-social mt-3">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <!-- Column 2: Quick Links -->
+        <div class="col-md-6 col-lg-3">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <!-- Column 3: Services -->
+        <div class="col-md-6 col-lg-3">
+          <h5>Our Services</h5>
+          <ul>
+            <li><a href="services.html">Battery Replacement</a></li>
+            <li><a href="services.html">Watch Servicing</a></li>
+            <li><a href="services.html">Strap Fitting</a></li>
+            <li><a href="services.html">Ring Resizing</a></li>
+            <li><a href="services.html">Jewellery Cleaning</a></li>
+            <li><a href="booking.html">Book Consultation</a></li>
+          </ul>
+        </div>
+        <!-- Column 4: Contact -->
+        <div class="col-md-6 col-lg-3">
+          <h5>Contact Us</h5>
+          <ul>
+            <li><i class="fas fa-map-marker-alt me-2" aria-hidden="true"></i>48 Bond Street, London W1S 4QT</li>
+            <li><i class="fas fa-phone me-2" aria-hidden="true"></i><a href="tel:+442079460958">+44 20 7946 0958</a>
+            </li>
+            <li><i class="fas fa-envelope me-2" aria-hidden="true"></i><a
+                href="mailto:hello@chronolux.com">hello@chronolux.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 ChronoLux. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Schedule a drop-off appointment at ChronoLux. Book online for watch and jewellery repair - battery replacement, servicing, ring resizing, and more.">
+  <title>Book a Consultation | ChronoLux - Mayfair Atelier</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "JewelryStore",
+    "name": "ChronoLux",
+    "description": "Book a drop-off appointment for professional watch and jewellery repair in London.",
+    "url": "https://chronolux.com/booking",
+    "telephone": "+44-20-7946-0958",
+    "email": "hello@chronolux.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "48 Bond Street",
+      "addressLocality": "London",
+      "postalCode": "W1S 4QT",
+      "addressCountry": "GB"
+    },
+    "potentialAction": {
+      "@type": "ReserveAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://chronolux.com/booking",
+        "actionPlatform": [
+          "http://schema.org/DesktopWebPlatform",
+          "http://schema.org/MobileWebPlatform"
+        ]
+      },
+      "result": {
+        "@type": "Reservation",
+        "name": "Drop-Off Appointment"
+      }
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <script>
+    (function () {
+      function hasDemoCustomerLogin() {
+        const email = localStorage.getItem('userLoggedInEmail') || localStorage.getItem('userEmail');
+        return localStorage.getItem('userLoggedIn') === 'true' &&
+          email === 'customer@chronolux.com';
+      }
+
+      function requireCustomerLogin() {
+        if (hasDemoCustomerLogin()) return;
+        sessionStorage.setItem('loginReturnTo', 'booking.html');
+        window.location.replace('login.html');
+      }
+
+      requireCustomerLogin();
+      window.addEventListener('pageshow', requireCustomerLogin);
+    })();
+  </script>
+
+  <!-- Skip Navigation Link (Accessibility) -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar navbar-expand-lg site-navbar" aria-label="Main navigation">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <i class="fas fa-gem me-2" aria-hidden="true"></i>ChronoLux
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="navbar-controls">
+          <a href="booking.html" class="btn-gold me-2 d-none d-lg-inline-flex" aria-current="page">Book Consultation</a>
+          <button id="themeToggle" class="theme-toggle" aria-label="Switch to dark mode" type="button">
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </button>
+          <button id="rtlToggle" class="rtl-toggle" aria-label="Toggle RTL direction" aria-pressed="false" type="button">
+            <i class="fas fa-right-left" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- ===== PAGE HEADER ===== -->
+    <header class="page-header">
+      <div class="container">
+        <h1>Book a Consultation Appointment</h1>
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb-nav">
+            <li><a href="index.html">Home</a></li>
+            <li aria-current="page">Book Consultation</li>
+          </ol>
+        </nav>
+      </div>
+    </header>
+
+    <!-- ===== BOOKING FORM ===== -->
+    <section class="section-padding" aria-labelledby="booking-form-heading">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="section-header">
+              <span class="section-label">Reserve Your Consultation</span>
+              <h2 id="booking-form-heading">Request a Drop-Off Time</h2>
+              <p>Complete the form below and we will confirm your appointment within one business day. Walk-ins are also welcome during opening hours.</p>
+            </div>
+
+            <div class="section-image mb-4">
+              <img src="../booking.png" alt="Luxury consultation appointment in a premium watch boutique" loading="lazy">
+            </div>
+
+            <form id="bookingForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="fullName" class="form-label">Full Name</label>
+                  <input type="text" class="form-control" id="fullName" name="fullName" autocomplete="name" required>
+                </div>
+                <div class="col-md-6">
+                  <label for="phone" class="form-label">Phone</label>
+                  <input type="tel" class="form-control" id="phone" name="phone" autocomplete="tel" required>
+                </div>
+                <div class="col-12">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="email" name="email" autocomplete="email" required>
+                </div>
+                <div class="col-md-6">
+                  <label for="itemType" class="form-label">Item Type</label>
+                  <select class="form-select" id="itemType" name="itemType" required>
+                    <option value="" selected disabled>Select item type</option>
+                    <option value="Watch">Watch</option>
+                    <option value="Ring">Ring</option>
+                    <option value="Necklace">Necklace</option>
+                    <option value="Bracelet">Bracelet</option>
+                    <option value="Earrings">Earrings</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label for="serviceRequired" class="form-label">Service Required</label>
+                  <select class="form-select" id="serviceRequired" name="serviceRequired" required>
+                    <option value="" selected disabled>Select a service</option>
+                    <option value="Battery Replacement">Battery Replacement</option>
+                    <option value="Strap &amp; Bracelet Fitting">Strap &amp; Bracelet Fitting</option>
+                    <option value="Watch Servicing">Watch Servicing</option>
+                    <option value="Ring Resizing">Ring Resizing</option>
+                    <option value="Jewellery Cleaning">Jewellery Cleaning</option>
+                    <option value="Chain Repair">Chain Repair</option>
+                    <option value="Clasp Repair">Clasp Repair</option>
+                    <option value="Stone Setting">Stone Setting</option>
+                    <option value="Other / Not Sure">Other / Not Sure</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label for="itemBrand" class="form-label">Item Brand</label>
+                  <input type="text" class="form-control" id="itemBrand" name="itemBrand" placeholder="e.g. Rolex, Cartier, Seiko" required>
+                </div>
+                <div class="col-12">
+                  <label for="issueDescription" class="form-label">Issue Description</label>
+                  <textarea class="form-control" id="issueDescription" name="issueDescription" rows="4" placeholder="Describe the issue or service you need" required></textarea>
+                </div>
+                <div class="col-md-6">
+                  <label for="preferredDate" class="form-label">Preferred Date</label>
+                  <input type="date" class="form-control" id="preferredDate" name="preferredDate" required>
+                </div>
+                <div class="col-md-6">
+                  <label for="preferredTime" class="form-label">Preferred Time</label>
+                  <select class="form-select" id="preferredTime" name="preferredTime" required>
+                    <option value="" selected disabled>Select a time slot</option>
+                    <option value="Morning">Morning (9:00 – 12:00)</option>
+                    <option value="Afternoon">Afternoon (12:00 – 15:00)</option>
+                    <option value="Late Afternoon">Late Afternoon (15:00 – 18:00)</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn-gold">Submit Appointment Request</button>
+                </div>
+              </div>
+            </form>
+
+            <div id="bookingSuccess" class="form-success-message" tabindex="-1" role="status">
+              <i class="fas fa-check-circle" aria-hidden="true"></i>
+              <h3>Appointment Request Received</h3>
+              <p>Thank you for reserving your consultation with ChronoLux. We will contact you shortly to confirm your drop-off time. If you need immediate assistance, please call us at <a href="tel:+442079460958">+44 20 7946 0958</a>.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== WHAT TO BRING ===== -->
+    <section class="section-padding section-alt" aria-labelledby="bring-heading">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-5">
+            <span class="section-label">Before You Visit</span>
+            <h2 id="bring-heading">What to Bring</h2>
+            <p>Help us assess and repair your item efficiently by bringing the following when you drop off.</p>
+          </div>
+          <div class="col-lg-7">
+            <ul class="bring-list">
+              <li>
+                <i class="fas fa-watch" aria-hidden="true"></i>
+                <div>
+                  <strong>The item itself</strong>
+                  <p class="mb-0">Bring the watch or piece of jewellery that needs repair, including any removable parts.</p>
+                </div>
+              </li>
+              <li>
+                <i class="fas fa-link" aria-hidden="true"></i>
+                <div>
+                  <strong>Straps, chains, or spare links</strong>
+                  <p class="mb-0">Include original straps, bracelets, chains, or extra links if relevant to the repair.</p>
+                </div>
+              </li>
+              <li>
+                <i class="fas fa-file-alt" aria-hidden="true"></i>
+                <div>
+                  <strong>Warranty or service papers</strong>
+                  <p class="mb-0">Original documentation helps us verify authenticity and service history where applicable.</p>
+                </div>
+              </li>
+              <li>
+                <i class="fas fa-box" aria-hidden="true"></i>
+                <div>
+                  <strong>Original box or pouch</strong>
+                  <p class="mb-0">If available, bring the original packaging for safe storage while your item is with us.</p>
+                </div>
+              </li>
+              <li>
+                <i class="fas fa-id-card" aria-hidden="true"></i>
+                <div>
+                  <strong>Photo ID</strong>
+                  <p class="mb-0">A valid photo ID is required when dropping off high-value items for security purposes.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== LOCATION & MAP ===== -->
+    <section class="section-padding" aria-labelledby="location-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Find Us</span>
+          <h2 id="location-heading">Drop-Off Location</h2>
+          <p>Visit our workshop on Bond Street in central London. Convenient parking and public transport nearby.</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <address class="contact-info-card">
+              <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+              <h3>ChronoLux</h3>
+              <p>48 Bond Street<br>London W1S 4QT<br>United Kingdom</p>
+              <p><i class="fas fa-phone me-2" aria-hidden="true"></i><a href="tel:+442079460958">+44 20 7946 0958</a></p>
+              <p><i class="fas fa-envelope me-2" aria-hidden="true"></i><a href="mailto:hello@chronolux.com">hello@chronolux.com</a></p>
+              <p class="mb-0"><strong>Opening Hours</strong><br>Mon–Fri: 9:00 – 18:00<br>Sat: 10:00 – 16:00<br>Sun: Closed</p>
+            </address>
+          </div>
+          <div class="col-lg-8">
+            <div class="map-placeholder">
+              <iframe
+                src="https://maps.google.com/maps?q=42+Horology+Lane+London+EC1A+1BB&output=embed"
+                title="Map showing ChronoLux location at 48 Bond Street, London"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Column 1: About -->
+        <div class="col-md-6 col-lg-3">
+          <h5><i class="fas fa-gem me-2" aria-hidden="true"></i>ChronoLux</h5>
+          <p>Mayfair's premier atelier for luxury watch and fine jewellery restoration since 1992. White-glove service, master craftsmanship, and uncompromising standards.</p>
+          <div class="footer-social mt-3">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <!-- Column 2: Quick Links -->
+        <div class="col-md-6 col-lg-3">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <!-- Column 3: Services -->
+        <div class="col-md-6 col-lg-3">
+          <h5>Our Services</h5>
+          <ul>
+            <li><a href="services.html">Battery Replacement</a></li>
+            <li><a href="services.html">Watch Servicing</a></li>
+            <li><a href="services.html">Strap Fitting</a></li>
+            <li><a href="services.html">Ring Resizing</a></li>
+            <li><a href="services.html">Jewellery Cleaning</a></li>
+            <li><a href="booking.html">Book Consultation</a></li>
+          </ul>
+        </div>
+        <!-- Column 4: Contact -->
+        <div class="col-md-6 col-lg-3">
+          <h5>Contact Us</h5>
+          <ul>
+            <li><i class="fas fa-map-marker-alt me-2" aria-hidden="true"></i>48 Bond Street, London W1S 4QT</li>
+            <li><i class="fas fa-phone me-2" aria-hidden="true"></i><a href="tel:+442079460958">+44 20 7946 0958</a></li>
+            <li><i class="fas fa-envelope me-2" aria-hidden="true"></i><a href="mailto:hello@chronolux.com">hello@chronolux.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 ChronoLux. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

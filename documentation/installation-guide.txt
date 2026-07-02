@@ -1,0 +1,114 @@
+================================================================================
+  TIMECRAFT REPAIRS — INSTALLATION GUIDE
+  Watch & Jewellery Repair Shop Website
+================================================================================
+
+OVERVIEW
+--------
+This is a static HTML website. No server-side code, database, or build tools
+are required. All pages run directly in a modern web browser.
+
+
+REQUIREMENTS
+------------
+- A modern web browser (Chrome, Firefox, Safari, or Edge — latest versions)
+- An internet connection (for CDN assets: Bootstrap, Font Awesome, Google
+  Fonts, and Unsplash placeholder images)
+- Optional: a local web server for testing (recommended over opening files
+  directly via file:// protocol)
+
+
+FOLDER STRUCTURE
+----------------
+watch-repair/
+├── assets/
+│   ├── css/          Stylesheets (style.css, dark-mode.css, rtl.css)
+│   ├── js/           JavaScript (main.js)
+│   ├── images/       Local image assets (optional — site uses CDN images)
+│   └── fonts/        Local font files (optional — Google Fonts CDN used)
+├── pages/            All 11 HTML pages
+├── documentation/    Guides and credits
+├── sitemap.xml       SEO sitemap
+├── robots.txt        Search engine directives
+└── README.md         Project overview
+
+
+QUICK START (LOCAL TESTING)
+---------------------------
+Option 1 — Direct file open:
+  1. Navigate to the watch-repair/pages/ folder.
+  2. Double-click index.html to open in your browser.
+  3. Note: Some features (form submissions) require a live URL.
+
+Option 2 — Local web server (recommended):
+  Using Python 3:
+    cd watch-repair
+    python -m http.server 8080
+    Open http://localhost:8080/pages/index.html
+
+  Using Node.js (npx):
+    cd watch-repair
+    npx serve .
+    Open the URL shown in the terminal + /pages/index.html
+
+  Using VS Code / Cursor:
+    Install the "Live Server" extension.
+    Right-click pages/index.html → "Open with Live Server".
+
+
+DEPLOYMENT
+----------
+Upload the entire watch-repair/ folder to any static hosting provider:
+
+  - Netlify       : Drag-and-drop the folder or connect a Git repo
+  - Vercel        : Import project, set root directory
+  - GitHub Pages  : Push to gh-pages branch
+  - Shared hosting: Upload via FTP to public_html/
+
+After deployment, update these placeholders:
+  1. Formspree form IDs in booking.html and contact.html
+  2. Mailchimp action URLs in index.html and coming-soon.html
+  3. Google Maps iframe src in booking.html and contact.html
+  4. Domain URLs in sitemap.xml, robots.txt, and JSON-LD blocks
+  5. Replace Unsplash CDN image URLs with your own WebP images in assets/images/
+
+
+THIRD-PARTY INTEGRATIONS
+------------------------
+Formspree (Forms):
+  1. Create a free account at https://formspree.io
+  2. Create two forms (Booking + Contact)
+  3. Replace YOUR_FORM_ID in form action attributes
+
+Mailchimp (Newsletter):
+  1. Create a list at https://mailchimp.com
+  2. Generate an embedded form or get the POST endpoint URL
+  3. Replace YOUR-MAILCHIMP-URL in newsletter form actions
+
+Google Maps:
+  1. Go to Google Maps → share → embed a map
+  2. Copy the iframe src URL
+  3. Replace the placeholder iframe in booking.html and contact.html
+
+
+BROWSER TESTING CHECKLIST
+---------------------------
+[ ] Home page loads with hero, services, testimonials
+[ ] All navigation links work (no 404s except intentional 404.html)
+[ ] Dark mode toggle persists after page reload
+[ ] RTL toggle flips layout correctly
+[ ] Booking form validates empty/invalid fields
+[ ] Booking form shows confirmation on valid submit
+[ ] Contact form validates and shows confirmation
+[ ] Blog filter tabs show/hide articles
+[ ] Coming soon countdown updates every second
+[ ] Responsive layout at 375px, 768px, 1024px, 1440px
+[ ] Keyboard navigation (Tab, Enter, Escape on accordion)
+
+
+SUPPORT
+-------
+Refer to customization-guide.txt for styling and content changes.
+Refer to credits.txt for third-party asset attributions.
+
+================================================================================
