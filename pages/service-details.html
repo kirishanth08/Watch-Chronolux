@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Professional watch servicing at ChronoLux - full mechanical and automatic overhauls with lubrication, regulation, pressure testing, and a 90-day guarantee. Standard, Express, and Premium tiers available.">
+  <meta name="description"
+    content="Professional watch servicing at ChronoLux - full mechanical and automatic overhauls with lubrication, regulation, pressure testing, and a 90-day guarantee. Standard, Express, and Premium tiers available.">
   <title>Watch Servicing | ChronoLux - London</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Libre+Baskerville:wght@400;700&display=swap"
+    rel="stylesheet">
 
   <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -64,8 +68,117 @@
       }
     ]
   }
+
+
+    const serviceData = {
+    
+    battery:{
+    banner:"../battery-service.jpg",
+    title:"Watch Battery Replacement",
+    breadcrumb:"Battery Replacement",
+    overview:"Our battery replacement service is fast, reliable and performed using premium quality batteries suitable for luxury and everyday watches.",
+    facts:{
+    suitable:"Quartz Watches",
+    guarantee:"12 Month Battery Warranty",
+    brands:"Casio, Fossil, Titan, Citizen, Seiko"
+    }
+    },
+    
+    strap:{
+    banner:"../strap-service.jpg",
+    title:"Watch Strap Replacement",
+    breadcrumb:"Strap Replacement",
+    overview:"Choose from genuine leather, stainless steel, silicone and premium replacement straps fitted professionally by our technicians.",
+    facts:{
+    suitable:"All Watch Types",
+    guarantee:"30 Day Fitting Warranty",
+    brands:"Rolex, Seiko, Citizen, Fossil"
+    }
+    },
+    
+    service:{
+    banner:"../img1.png",
+    title:"Haute Horology Servicing",
+    breadcrumb:"Watch Servicing",
+    overview:"A complete watch service restores accuracy, reliability and longevity using professional servicing techniques.",
+    facts:{
+    suitable:"Mechanical & Automatic",
+    guarantee:"90 Day Workmanship",
+    brands:"Rolex, Omega, Seiko"
+    }
+    },
+    
+    ring:{
+    banner:"../ring-service.jpg",
+    title:"Watch Ring Replacement",
+    breadcrumb:"Bezel & Ring Repair",
+    overview:"Damaged bezels and watch rings are replaced using genuine or compatible components while maintaining factory appearance.",
+    facts:{
+    suitable:"Luxury Watches",
+    guarantee:"90 Days",
+    brands:"Rolex, Tissot, Omega"
+    }
+    },
+    
+    jewellery:{
+    banner:"../jewellery-service.jpg",
+    title:"Jewellery Restoration",
+    breadcrumb:"Jewellery Restoration",
+    overview:"Professional jewellery cleaning, polishing and restoration services for gold, silver and platinum jewellery.",
+    facts:{
+    suitable:"Gold & Silver",
+    guarantee:"90 Days",
+    brands:"All Brands"
+    }
+    },
+    
+    restoration:{
+    banner:"../restoration-service.jpg",
+    title:"Vintage Watch Restoration",
+    breadcrumb:"Watch Restoration",
+    overview:"Complete restoration for antique and vintage watches while preserving originality and value.",
+    facts:{
+    suitable:"Vintage Watches",
+    guarantee:"90 Days",
+    brands:"Rolex, Omega, Longines"
+    }
+    }
+    
+    };
+    
+    const params=new URLSearchParams(window.location.search);
+    const id=params.get("id")||"service";
+    const item=serviceData[id];
+    
+    document.querySelector(".service-banner img").src=item.banner;
+    
+    document.getElementById("service-overview").textContent=item.title;
+    
+    document.querySelector(".text-muted.mb-4").innerHTML=
+    `<a href="index.html">Home</a> /
+    <a href="services.html">Services</a> /
+    ${item.breadcrumb}`;
+    
+    document.querySelector(".col-lg-8 p").textContent=item.overview;
+    
+    const facts=document.querySelector(".service-card");
+    
+    facts.innerHTML=`
+    <div class="card-icon">
+    <i class="fas fa-cogs"></i>
+    </div>
+    
+    <h3>Quick Facts</h3>
+    
+    <p><strong>Suitable for:</strong> ${item.facts.suitable}</p>
+    
+    <p><strong>Guarantee:</strong> ${item.facts.guarantee}</p>
+    
+    <p><strong>Brands:</strong> ${item.facts.brands}</p>
+    `;
   </script>
 </head>
+
 <body>
 
   <!-- Skip Navigation Link (Accessibility) -->
@@ -77,7 +190,8 @@
       <a class="navbar-brand" href="index.html">
         <i class="fas fa-gem me-2" aria-hidden="true"></i>ChronoLux
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+        aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="mainNav">
@@ -93,11 +207,11 @@
       <div class="navbar-controls">
         <a href="booking.html" class="btn-gold me-2 d-none d-lg-inline-flex">Book Consultation</a>
         <button id="themeToggle" class="theme-toggle" aria-label="Switch to dark mode" type="button">
-            <i class="fas fa-moon" aria-hidden="true"></i>
-          </button>
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </button>
         <button id="rtlToggle" class="rtl-toggle" aria-label="Toggle RTL direction" aria-pressed="false" type="button">
-            <i class="fas fa-right-left" aria-hidden="true"></i>
-          </button>
+          <i class="fas fa-right-left" aria-hidden="true"></i>
+        </button>
       </div>
     </div>
   </nav>
@@ -106,23 +220,37 @@
 
     <!-- ===== SERVICE BANNER ===== -->
     <section class="service-banner" aria-label="Watch servicing banner">
-      <img src="../img1.png" alt="Watchmaker performing a full mechanical watch service under magnification" width="1920" height="400" loading="eager">
+      <img id="serviceBanner" src="../img1.png"
+        alt="Watchmaker performing a full mechanical watch service under magnification" width="1920" height="400"
+        loading="eager">
     </section>
 
     <!-- ===== SERVICE OVERVIEW ===== -->
     <section class="section-padding" aria-labelledby="service-overview">
       <div class="container">
-        <p class="text-muted mb-4"><a href="index.html">Home</a> / <a href="services.html">Services</a> / Watch Servicing</p>
+        <p class="text-muted mb-4" id="breadcrumb"><a href="index.html">Home</a> / <a href="services.html">Services</a>
+          / Watch
+          Servicing</p>
         <div class="row g-5">
           <div class="col-lg-8">
             <span class="section-label">Expert Horology</span>
-            <h1 id="service-overview">Haute Horology Servicing</h1>
-            <p>A complete watch service restores accuracy, reliability, and longevity to your timepiece. Whether you wear a vintage manual wind, a daily automatic, or a cherished heirloom, our certified watchmakers follow manufacturer-aligned procedures to bring your movement back to peak performance.</p>
-            <p>Every service begins with a complimentary assessment. We inspect the case, crown, crystal, and movement before providing a transparent quote - no hidden fees, no unnecessary upsells. Once approved, your watch enters our controlled workshop environment where each component is handled with precision tools and decades of expertise.</p>
-            <p>From disassembly and ultrasonic cleaning to fresh lubrication and timing regulation, we treat every watch as if it were our own. Upon completion, your timepiece undergoes multi-point quality checks and optional water-resistance testing before being returned in protective packaging.</p>
+            <h1 id="serviceTitle">Haute Horology Servicing</h1>
+            <p id="serviceDescription">A complete watch service restores accuracy, reliability, and longevity to your
+              timepiece. Whether you
+              wear a vintage manual wind, a daily automatic, or a cherished heirloom, our certified watchmakers follow
+              manufacturer-aligned procedures to bring your movement back to peak performance.</p>
+            <p id="serviceDescription">Every service begins with a complimentary assessment. We inspect the case, crown,
+              crystal, and movement
+              before providing a transparent quote - no hidden fees, no unnecessary upsells. Once approved, your watch
+              enters our controlled workshop environment where each component is handled with precision tools and
+              decades of expertise.</p>
+            <p id="serviceDescription">From disassembly and ultrasonic cleaning to fresh lubrication and timing
+              regulation, we treat every watch
+              as if it were our own. Upon completion, your timepiece undergoes multi-point quality checks and optional
+              water-resistance testing before being returned in protective packaging.</p>
           </div>
           <div class="col-lg-4">
-            <aside class="service-card">
+            <aside class="service-card" id="quickFacts">
               <div class="card-icon"><i class="fas fa-cogs" aria-hidden="true"></i></div>
               <h3>Quick Facts</h3>
               <p class="mb-2"><strong>Suitable for:</strong> Mechanical, automatic, and manual-wind watches</p>
@@ -148,10 +276,12 @@
               <li><i class="fas fa-check-circle" aria-hidden="true"></i> Full movement disassembly and inspection</li>
               <li><i class="fas fa-check-circle" aria-hidden="true"></i> Ultrasonic cleaning of all components</li>
               <li><i class="fas fa-check-circle" aria-hidden="true"></i> Replacement of worn gaskets and seals</li>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Fresh lubrication at manufacturer-specified points</li>
+              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Fresh lubrication at manufacturer-specified
+                points</li>
               <li><i class="fas fa-check-circle" aria-hidden="true"></i> Timing regulation and accuracy testing</li>
               <li><i class="fas fa-check-circle" aria-hidden="true"></i> Case and bracelet exterior cleaning</li>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Water-resistance pressure test (where applicable)</li>
+              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Water-resistance pressure test (where
+                applicable)</li>
             </ul>
           </div>
         </div>
@@ -185,7 +315,8 @@
             </div>
           </div>
         </div>
-        <p class="text-center mb-0 mt-3">Complex vintage or chronograph movements may require additional time - we will advise during your free assessment.</p>
+        <p class="text-center mb-0 mt-3">Complex vintage or chronograph movements may require additional time - we will
+          advise during your free assessment.</p>
       </div>
     </section>
 
@@ -239,7 +370,8 @@
           </div>
         </div>
         <div class="pricing-note">
-          <p class="mb-0"><i class="fas fa-info-circle me-2" aria-hidden="true"></i>Final pricing depends on movement complexity and parts required. A detailed quote is provided before any work begins.</p>
+          <p class="mb-0"><i class="fas fa-info-circle me-2" aria-hidden="true"></i>Final pricing depends on movement
+            complexity and parts required. A detailed quote is provided before any work begins.</p>
         </div>
       </div>
     </section>
@@ -255,13 +387,15 @@
         <div class="before-after">
           <figure class="ba-item">
             <div class="img-hover-wrap">
-              <img src="../service.png" alt="Vintage automatic watch before servicing - dull case and stopped movement" width="800" height="250" loading="lazy">
+              <img src="../service.png" alt="Vintage automatic watch before servicing - dull case and stopped movement"
+                width="800" height="250" loading="lazy">
             </div>
             <figcaption class="ba-label">Before - Stopped &amp; Worn</figcaption>
           </figure>
           <figure class="ba-item">
             <div class="img-hover-wrap">
-              <img src="../blog5.png" alt="Same watch after full service - polished case and running accurately" width="800" height="250" loading="lazy">
+              <img src="../blog5.png" alt="Same watch after full service - polished case and running accurately"
+                width="800" height="250" loading="lazy">
             </div>
             <figcaption class="ba-label">After - Restored &amp; Regulated</figcaption>
           </figure>
@@ -281,61 +415,81 @@
             <div class="accordion" id="serviceFaq">
               <div class="accordion-item">
                 <h3 class="accordion-header" id="faqOneHeading">
-                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqOne" aria-expanded="true" aria-controls="faqOne">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqOne"
+                    aria-expanded="true" aria-controls="faqOne">
                     How often should I service my watch?
                   </button>
                 </h3>
-                <div id="faqOne" class="accordion-collapse collapse show" aria-labelledby="faqOneHeading" data-bs-parent="#serviceFaq">
+                <div id="faqOne" class="accordion-collapse collapse show" aria-labelledby="faqOneHeading"
+                  data-bs-parent="#serviceFaq">
                   <div class="accordion-body">
-                    Most mechanical and automatic watches benefit from a full service every 3–5 years, depending on wear frequency and manufacturer recommendations. If you notice accuracy drift, moisture inside the crystal, or the crown feeling stiff, schedule an assessment sooner.
+                    Most mechanical and automatic watches benefit from a full service every 3–5 years, depending on wear
+                    frequency and manufacturer recommendations. If you notice accuracy drift, moisture inside the
+                    crystal, or the crown feeling stiff, schedule an assessment sooner.
                   </div>
                 </div>
               </div>
               <div class="accordion-item">
                 <h3 class="accordion-header" id="faqTwoHeading">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqTwo" aria-expanded="false" aria-controls="faqTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#faqTwo" aria-expanded="false" aria-controls="faqTwo">
                     Do you service all watch brands?
                   </button>
                 </h3>
-                <div id="faqTwo" class="accordion-collapse collapse" aria-labelledby="faqTwoHeading" data-bs-parent="#serviceFaq">
+                <div id="faqTwo" class="accordion-collapse collapse" aria-labelledby="faqTwoHeading"
+                  data-bs-parent="#serviceFaq">
                   <div class="accordion-body">
-                    Yes. We work on a wide range of brands from entry-level Seiko and Tissot to luxury names like Rolex, Omega, and Cartier. Vintage and discontinued movements are also welcome - our team has extensive experience with calibres no longer in production.
+                    Yes. We work on a wide range of brands from entry-level Seiko and Tissot to luxury names like Rolex,
+                    Omega, and Cartier. Vintage and discontinued movements are also welcome - our team has extensive
+                    experience with calibres no longer in production.
                   </div>
                 </div>
               </div>
               <div class="accordion-item">
                 <h3 class="accordion-header" id="faqThreeHeading">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqThree" aria-expanded="false" aria-controls="faqThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#faqThree" aria-expanded="false" aria-controls="faqThree">
                     Will servicing affect my warranty?
                   </button>
                 </h3>
-                <div id="faqThree" class="accordion-collapse collapse" aria-labelledby="faqThreeHeading" data-bs-parent="#serviceFaq">
+                <div id="faqThree" class="accordion-collapse collapse" aria-labelledby="faqThreeHeading"
+                  data-bs-parent="#serviceFaq">
                   <div class="accordion-body">
-                    If your watch is still under manufacturer warranty, we recommend checking with the brand first, as unauthorised service may void coverage. For watches outside warranty - which is most of our clients - our independent service is fully backed by our own 90-day guarantee.
+                    If your watch is still under manufacturer warranty, we recommend checking with the brand first, as
+                    unauthorised service may void coverage. For watches outside warranty - which is most of our clients
+                    - our independent service is fully backed by our own 90-day guarantee.
                   </div>
                 </div>
               </div>
               <div class="accordion-item">
                 <h3 class="accordion-header" id="faqFourHeading">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqFour" aria-expanded="false" aria-controls="faqFour">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#faqFour" aria-expanded="false" aria-controls="faqFour">
                     What if parts need replacing?
                   </button>
                 </h3>
-                <div id="faqFour" class="accordion-collapse collapse" aria-labelledby="faqFourHeading" data-bs-parent="#serviceFaq">
+                <div id="faqFour" class="accordion-collapse collapse" aria-labelledby="faqFourHeading"
+                  data-bs-parent="#serviceFaq">
                   <div class="accordion-body">
-                    During disassembly we identify worn or damaged components such as mainsprings, jewels, or crowns. Any parts beyond standard gaskets are quoted separately before replacement. We source OEM or high-quality compatible parts and never proceed without your approval.
+                    During disassembly we identify worn or damaged components such as mainsprings, jewels, or crowns.
+                    Any parts beyond standard gaskets are quoted separately before replacement. We source OEM or
+                    high-quality compatible parts and never proceed without your approval.
                   </div>
                 </div>
               </div>
               <div class="accordion-item">
                 <h3 class="accordion-header" id="faqFiveHeading">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqFive" aria-expanded="false" aria-controls="faqFive">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#faqFive" aria-expanded="false" aria-controls="faqFive">
                     Can I track the progress of my service?
                   </button>
                 </h3>
-                <div id="faqFive" class="accordion-collapse collapse" aria-labelledby="faqFiveHeading" data-bs-parent="#serviceFaq">
+                <div id="faqFive" class="accordion-collapse collapse" aria-labelledby="faqFiveHeading"
+                  data-bs-parent="#serviceFaq">
                   <div class="accordion-body">
-                    Absolutely. You receive a job reference at drop-off and can call or email us for updates at any stage. Express and Premium clients also receive a notification when their watch enters final testing and is ready for collection.
+                    Absolutely. You receive a job reference at drop-off and can call or email us for updates at any
+                    stage. Express and Premium clients also receive a notification when their watch enters final testing
+                    and is ready for collection.
                   </div>
                 </div>
               </div>
@@ -349,7 +503,8 @@
     <section class="cta-banner" aria-labelledby="service-cta-heading">
       <div class="container">
         <h2 id="service-cta-heading">Ready to Restore Your Timepiece?</h2>
-        <p>Book a drop-off at our London workshop and receive a free, no-obligation assessment from our master watchmakers.</p>
+        <p>Book a drop-off at our London workshop and receive a free, no-obligation assessment from our master
+          watchmakers.</p>
         <a href="booking.html" class="btn-gold">Book a Consultation</a>
       </div>
     </section>
@@ -363,7 +518,8 @@
         <!-- Column 1: About -->
         <div class="col-md-6 col-lg-3">
           <h5><i class="fas fa-gem me-2" aria-hidden="true"></i>ChronoLux</h5>
-          <p>Mayfair's premier atelier for luxury watch and fine jewellery restoration since 1992. White-glove service, master craftsmanship, and uncompromising standards.</p>
+          <p>Mayfair's premier atelier for luxury watch and fine jewellery restoration since 1992. White-glove service,
+            master craftsmanship, and uncompromising standards.</p>
           <div class="footer-social mt-3">
             <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
             <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
@@ -399,8 +555,10 @@
           <h5>Contact Us</h5>
           <ul>
             <li><i class="fas fa-map-marker-alt me-2" aria-hidden="true"></i>48 Bond Street, London W1S 4QT</li>
-            <li><i class="fas fa-phone me-2" aria-hidden="true"></i><a href="tel:+442079460958">+44 20 7946 0958</a></li>
-            <li><i class="fas fa-envelope me-2" aria-hidden="true"></i><a href="mailto:hello@chronolux.com">hello@chronolux.com</a></li>
+            <li><i class="fas fa-phone me-2" aria-hidden="true"></i><a href="tel:+442079460958">+44 20 7946 0958</a>
+            </li>
+            <li><i class="fas fa-envelope me-2" aria-hidden="true"></i><a
+                href="mailto:hello@chronolux.com">hello@chronolux.com</a></li>
           </ul>
         </div>
       </div>
@@ -410,9 +568,123 @@
     </div>
   </footer>
 
+  <script>
+
+    const services = {
+
+      battery: {
+        title: "Watch Battery Replacement",
+        image: "../Battery.png",
+        breadcrumb: "Battery Replacement",
+        description: "Professional battery replacement using premium quality cells for quartz watches. Every battery replacement includes testing and sealing to ensure reliable performance.",
+        facts: [
+          "Suitable: Quartz Watches",
+          "Warranty: 12 Months",
+          "Brands: Casio, Titan, Fossil, Citizen"
+        ]
+      },
+
+      strap: {
+        title: "Watch Strap Replacement",
+        image: "../strap.png",
+        breadcrumb: "Strap Replacement",
+        description: "Replace worn leather, metal or silicone straps with premium quality replacements fitted by our experienced technicians.",
+        facts: [
+          "Suitable: All Watches",
+          "Warranty: 30 Days",
+          "Leather & Metal Straps"
+        ]
+      },
+
+      service: {
+        title: "Haute Horology Servicing",
+        image: "../img1.png",
+        breadcrumb: "Watch Servicing",
+        description: "Complete servicing including cleaning, lubrication, regulation and testing performed by professional watchmakers.",
+        facts: [
+          "Mechanical Watches",
+          "90-Day Warranty",
+          "Luxury Brands"
+        ]
+      },
+
+      ring: {
+        title: "Watch Ring Replacement",
+        image: "../ring.jpeg",
+        breadcrumb: "Ring Replacement",
+        description: "Professional replacement of damaged bezels and rings using original quality components.",
+        facts: [
+          "Luxury Watches",
+          "Original Parts",
+          "Precision Fitting"
+        ]
+      },
+
+      jewellery: {
+        title: "Jewellery Restoration",
+        image: "../chain.png",
+        breadcrumb: "Jewellery Restoration",
+        description: "Cleaning, polishing and restoration services for gold, silver and premium jewellery.",
+        facts: [
+          "Gold",
+          "Silver",
+          "Platinum"
+        ]
+      },
+
+      restoration: {
+        title: "Vintage Restoration",
+        image: "../movement.png",
+        breadcrumb: "Watch Restoration",
+        description: "Complete restoration of antique and vintage watches while preserving originality and value.",
+        facts: [
+          "Vintage Watches",
+          "Collector Pieces",
+          "Luxury Restoration"
+        ]
+      }
+
+    };
+
+    const id = new URLSearchParams(window.location.search).get("id");
+
+    if (id && services[id]) {
+
+      const s = services[id];
+
+      document.getElementById("serviceBanner").src = s.image;
+
+      document.getElementById("serviceTitle").innerHTML = s.title;
+
+      document.getElementById("breadcrumb").innerHTML =
+        `<a href="index.html">Home</a> /
+    <a href="services.html">Services</a> /
+    ${s.breadcrumb}`;
+
+      document.getElementById("serviceDescription").innerHTML = s.description;
+
+      document.getElementById("quickFacts").innerHTML = `
+    <div class="card-icon">
+    <i class="fas fa-cogs"></i>
+    </div>
+    
+    <h3>Quick Facts</h3>
+    
+    <p>${s.facts[0]}</p>
+    
+    <p>${s.facts[1]}</p>
+    
+    <p>${s.facts[2]}</p>
+    `;
+
+    }
+
+  </script>
+
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Custom JS -->
   <script src="../assets/js/main.js"></script>
 </body>
+
 </html>

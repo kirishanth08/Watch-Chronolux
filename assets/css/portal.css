@@ -1,5 +1,19 @@
 :root {
+
   color-scheme: dark;
+
+  --color-text: #1c1c1c;
+  --color-muted: #666666;
+
+}
+
+:root {
+
+  color-scheme: dark;
+
+  --color-text: #1c1c1c;
+  --color-muted: #666666;
+
 }
 
 .portal-page {
@@ -157,9 +171,8 @@
 }
 
 .portal-stat .value {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
 }
 
 .portal-stat .label {
@@ -200,9 +213,61 @@
 }
 
 .portal-table td,
-.portal-table th {
-  padding: 12px 10px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+.portal-table tbody td {
+  color: #1c1c1c !important;
+  opacity: 1 !important;
+}
+
+[data-theme="dark"] .portal-table td,
+[data-theme="dark"] .portal-table tbody td {
+  color: #f7f2e8 !important;
+}
+
+.admin-page .form-label {
+  color: #1c1c1c !important;
+  opacity: 1 !important;
+  font-weight: 600;
+}
+
+[data-theme="dark"] .admin-page .form-label {
+  color: #f7f2e8 !important;
+}
+
+.admin-page td,
+.admin-page span,
+.admin-page p,
+.admin-page strong {
+
+  color: #1c1c1c !important;
+  opacity: 1 !important;
+
+}
+
+[data-theme="dark"] .admin-page td,
+[data-theme="dark"] .admin-page span,
+[data-theme="dark"] .admin-page p,
+[data-theme="dark"] .admin-page strong {
+
+  color: #f7f2e8 !important;
+
+}
+
+.admin-page input,
+.admin-page textarea,
+.admin-page select {
+
+  color: #1c1c1c !important;
+  -webkit-text-fill-color: #1c1c1c;
+
+}
+
+[data-theme="dark"] .admin-page input,
+[data-theme="dark"] .admin-page textarea,
+[data-theme="dark"] .admin-page select {
+
+  color: #f7f2e8 !important;
+  -webkit-text-fill-color: #f7f2e8;
+
 }
 
 .portal-list {
@@ -2188,139 +2253,106 @@ SUPPORT PAGE FAQ DARK MODE FIX
 
 }
 
+/* ==========================================
+   ADMIN FORM LABEL FIX
+   ========================================== */
 
-/*=====================================================
-ADMIN KPI TEXT FIX
-=====================================================*/
-
-.admin-kpi .value {
-  color: var(--color-text) !important;
+/* Light Mode */
+[data-theme="light"] .admin-page .form-label,
+[data-theme="light"] .admin-page .portal-form label {
+  color: #1c1c1c !important;
+  font-weight: 600;
 }
 
-.admin-kpi .label {
-  color: var(--color-text) !important;
+/* Dark Mode */
+[data-theme="dark"] .admin-page .form-label,
+[data-theme="dark"] .admin-page .portal-form label {
+  color: #f7f2e8 !important;
+  font-weight: 600;
 }
 
-.admin-kpi .trend {
-  color: var(--color-muted) !important;
-}
-
-[data-theme="dark"] .admin-kpi .value {
-  color: #ffffff !important;
-}
-
-[data-theme="dark"] .admin-kpi .label {
-  color: #f0f0f0 !important;
-}
-
-[data-theme="dark"] .admin-kpi .trend {
-  color: #c7c7c7 !important;
-}
-
-/*=====================================================
-ADMIN TABLE TEXT
-=====================================================*/
-
-.portal-table td {
-  color: var(--color-text);
-}
-
-.portal-table tbody td {
-  color: var(--color-text);
-}
-
-[data-theme="dark"] .portal-table td {
-  color: #f2f2f2;
-}
-
-/*=====================================================
-ADMIN CARD HEADERS
-=====================================================*/
-
-.admin-card-header h4,
-.admin-toolbar h4,
-.card-title {
-
-  color: var(--color-text);
-
-}
-
-.admin-muted,
-.admin-topbar-copy {
-
-  color: var(--color-muted);
-
-}
-
-[data-theme="dark"] .admin-card-header h4,
-[data-theme="dark"] .admin-toolbar h4,
-[data-theme="dark"] .card-title {
-
-  color: #ffffff;
-
-}
-
-[data-theme="dark"] .admin-muted,
-[data-theme="dark"] .admin-topbar-copy {
-
-  color: #cfcfcf;
-
-}
-
-/*=====================================================
-ADMIN FORM FIX
-=====================================================*/
-
-.admin-page .form-control,
-.admin-page .form-select {
-
-  color: var(--color-text);
-
-}
-
-.admin-page .form-control::placeholder {
-
-  color: var(--color-muted);
-
+/* Inputs */
+[data-theme="light"] .admin-page .form-control,
+[data-theme="light"] .admin-page .form-select {
+  background: #ffffff !important;
+  color: #1c1c1c !important;
 }
 
 [data-theme="dark"] .admin-page .form-control,
 [data-theme="dark"] .admin-page .form-select {
+  background: #1d1d1d !important;
+  color: #f7f2e8 !important;
+}
 
-  color: #ffffff;
-
+/* Placeholder */
+[data-theme="light"] .admin-page .form-control::placeholder {
+  color: #666 !important;
 }
 
 [data-theme="dark"] .admin-page .form-control::placeholder {
-
-  color: #bfbfbf;
-
+  color: #bfbfbf !important;
 }
 
-/*=====================================================
-FEATURE ITEMS
-=====================================================*/
+/* ==========================================
+   REPAIR WORKFLOW LIGHT/DARK FIX
+   ========================================== */
 
-.admin-feature-item strong {
-
-  color: var(--color-text);
-
+/* Light mode */
+[data-theme="light"] .workflow-card,
+[data-theme="light"] .status-card {
+  background: #ffffff !important;
+  color: #1c1c1c !important;
+  border: 1px solid rgba(212, 168, 67, .25);
 }
 
-.admin-feature-item p {
-
-  color: var(--color-muted);
-
+[data-theme="light"] .workflow-card h2,
+[data-theme="light"] .workflow-card h3,
+[data-theme="light"] .workflow-card h4,
+[data-theme="light"] .workflow-card .value,
+[data-theme="light"] .status-card h2,
+[data-theme="light"] .status-card h3,
+[data-theme="light"] .status-card h4,
+[data-theme="light"] .status-card .value {
+  color: #1c1c1c !important;
 }
 
-[data-theme="dark"] .admin-feature-item strong {
-
-  color: #ffffff;
-
+/* Dark mode */
+[data-theme="dark"] .workflow-card,
+[data-theme="dark"] .status-card {
+  background: #171717 !important;
+  color: #f7f2e8 !important;
 }
 
-[data-theme="dark"] .admin-feature-item p {
+[data-theme="dark"] .workflow-card h2,
+[data-theme="dark"] .workflow-card h3,
+[data-theme="dark"] .workflow-card h4,
+[data-theme="dark"] .workflow-card .value,
+[data-theme="dark"] .status-card h2,
+[data-theme="dark"] .status-card h3,
+[data-theme="dark"] .status-card h4,
+[data-theme="dark"] .status-card .value {
+  color: #f7f2e8 !important;
+}
 
-  color: #cfcfcf;
+/* ==========================================
+   PORTAL STAT VALUE FIX
+   ========================================== */
 
+/* Light Theme */
+[data-theme="light"] .portal-stat .value {
+  color: #1c1c1c !important;
+}
+
+/* Dark Theme */
+[data-theme="dark"] .portal-stat .value {
+  color: #ffffff !important;
+}
+
+/* Labels */
+[data-theme="light"] .portal-stat .label {
+  color: #8b6b1a !important;
+}
+
+[data-theme="dark"] .portal-stat .label {
+  color: #d4a843 !important;
 }
