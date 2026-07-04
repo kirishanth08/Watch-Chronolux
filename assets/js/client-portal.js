@@ -75,6 +75,45 @@ document.addEventListener('DOMContentLoaded', () => {
     button.addEventListener('click', () => showClientNotice(button.dataset.clientAction));
   });
 
+  document.querySelectorAll('[data-add-item]').forEach((button) => {
+    const list = document.getElementById(button.dataset.listTarget);
+    if (!list) return;
+    const kind = button.dataset.addItem === 'watch' ? 'watch' : 'jewellery piece';
+    const storageKey = `savedItems.${button.dataset.listTarget}`;
+
+    // Restore any previously added items on page load.
+    let stored = [];
+    try {
+      stored = JSON.parse(localStorage.getItem(storageKey)) || [];
+    } catch (err) {
+      stored = [];
+    }
+    stored.forEach((entry) => addListItem(list, entry.name, entry.note));
+
+    button.addEventListener('click', () => {
+      const name = window.prompt(`Name of the ${kind} you'd like to add:`);
+      if (!name || !name.trim()) return;
+      const note = window.prompt('Add a service reminder or note (optional):', 'Added to your saved collection.') || 'Added to your saved collection.';
+      addListItem(list, name.trim(), note.trim());
+
+      stored.push({ name: name.trim(), note: note.trim() });
+      localStorage.setItem(storageKey, JSON.stringify(stored));
+
+      showClientNotice(`${name.trim()} added to your saved collection`);
+    });
+  });
+
+  function addListItem(list, name, note) {
+    const item = document.createElement('div');
+    item.className = 'portal-list-item';
+    const strong = document.createElement('strong');
+    strong.textContent = name;
+    item.appendChild(strong);
+    item.appendChild(document.createElement('br'));
+    item.appendChild(document.createTextNode(note));
+    list.appendChild(item);
+  }
+
   document.querySelectorAll('[data-client-form]').forEach((form) => {
     form.addEventListener('submit', (event) => {
       event.preventDefault();
