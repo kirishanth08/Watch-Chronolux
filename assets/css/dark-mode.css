@@ -305,3 +305,20 @@ CLIENT PORTAL DARK MODE VISIBILITY FIX
   background: #202020;
 
 }
+
+/* Navbar icons */
+[data-theme="dark"] .theme-toggle,
+[data-theme="dark"] .rtl-toggle {
+  color: #E8E8E8 !important;
+  border-color: #555 !important;
+}
+
+[data-theme="dark"] .theme-toggle i,
+[data-theme="dark"] .rtl-toggle i {
+  color: #E8E8E8 !important;
+}
+
+/* Navbar logo */
+[data-theme="dark"] .site-logo-mark {
+  filter: brightness(0) invert(1);
+}

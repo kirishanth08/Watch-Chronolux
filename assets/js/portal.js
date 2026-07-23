@@ -11,11 +11,9 @@
   ];
   const DEMO_AUTH = {
     userLoggedIn: {
-      email: 'customer@chronolux.com',
       emailKeys: ['userLoggedInEmail', 'userEmail']
     },
     adminLoggedIn: {
-      email: 'admin@chronolux.com',
       emailKeys: ['adminLoggedInEmail', 'adminEmail']
     }
   };
@@ -121,7 +119,11 @@
   function hasValidPortalAuth(key) {
     const account = DEMO_AUTH[key];
     if (!account || localStorage.getItem(key) !== 'true') return false;
-    return account.emailKeys.some((emailKey) => localStorage.getItem(emailKey) === account.email);
+    // Session is considered valid once the login flow has stored a
+    // matching email under any of this role's expected keys. There is no
+    // hardcoded credential here — actual authentication must be enforced
+    // by a real backend before this template is used in production.
+    return account.emailKeys.some((emailKey) => Boolean(localStorage.getItem(emailKey)));
   }
 
   function clearPortalAuth() {

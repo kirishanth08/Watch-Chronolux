@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Page not found - the page you are looking for may have been moved or removed. Return to ChronoLux homepage for watch and jewellery repair services.">
   <title>404 - Page Not Found | ChronoLux</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/images/logo-mark.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon-16.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="../assets/images/favicon-192.png">
+  <link rel="shortcut icon" href="../favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/apple-touch-icon.png">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,8 +36,9 @@
   <!-- ===== NAVBAR ===== -->
   <nav class="navbar navbar-expand-lg site-navbar" aria-label="Main navigation">
     <div class="container">
-      <a class="navbar-brand" href="index.html">
-        <i class="fas fa-gem me-2" aria-hidden="true"></i>ChronoLux
+      <a class="navbar-brand d-inline-flex align-items-center gap-2" href="index.html">
+        <img class="site-logo-mark" width="30" height="30" src="../assets/images/logo-mark.svg" alt="ChronoLux crest">
+        <span>Chrono<span>Lux</span></span>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -45,15 +52,20 @@
           <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
+        <div class="navbar-mobile-cta d-flex d-lg-none">
+          <a href="login.html" class="btn-outline-gold">Login</a>
+          <a href="signup.html" class="btn-gold">Register</a>
+        </div>
       </div>
       <div class="navbar-controls">
-        <a href="booking.html" class="btn-gold me-2 d-none d-lg-inline-flex">Book Consultation</a>
         <button id="themeToggle" class="theme-toggle" aria-label="Switch to dark mode" type="button">
-            <i class="fas fa-moon" aria-hidden="true"></i>
-          </button>
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </button>
         <button id="rtlToggle" class="rtl-toggle" aria-label="Toggle RTL direction" aria-pressed="false" type="button">
-            <i class="fas fa-right-left" aria-hidden="true"></i>
-          </button>
+          <i class="fas fa-right-left" aria-hidden="true"></i>
+        </button>
+        <a href="login.html" class="btn-outline-gold me-2 d-none d-lg-inline-flex">Login</a>
+        <a href="signup.html" class="btn-gold d-none d-lg-inline-flex">Register</a>
       </div>
     </div>
   </nav>
@@ -80,7 +92,7 @@
       <div class="row g-4">
         <!-- Column 1: About -->
         <div class="col-md-6 col-lg-3">
-          <h5><i class="fas fa-gem me-2" aria-hidden="true"></i>ChronoLux</h5>
+          <h5 class="footer-brand"><img class="site-logo-mark" width="30" height="30" src="../assets/images/logo-mark.svg" alt="ChronoLux crest"><span>Chrono<span>Lux</span></span></h5>
           <p>Mayfair's premier atelier for luxury watch and fine jewellery restoration since 1992. White-glove service, master craftsmanship, and uncompromising standards.</p>
           <div class="footer-social mt-3">
             <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>

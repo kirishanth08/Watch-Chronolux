@@ -65,9 +65,9 @@
     if (!controls || document.body.classList.contains('portal-page')) return;
 
     const isAdmin = localStorage.getItem('adminLoggedIn') === 'true' &&
-      localStorage.getItem('adminLoggedInEmail') === 'admin@chronolux.com';
+      Boolean(localStorage.getItem('adminLoggedInEmail'));
     const isCustomer = localStorage.getItem('userLoggedIn') === 'true' &&
-      localStorage.getItem('userLoggedInEmail') === 'customer@chronolux.com';
+      Boolean(localStorage.getItem('userLoggedInEmail'));
     if (!isAdmin && !isCustomer) return;
 
     controls.querySelectorAll('a[href="login.html"], a[href="signup.html"], a[href="admin-login.html"], a[href="admin-signup.html"]').forEach(function (link) {

@@ -1,10 +1,35 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 48" role="img" aria-label="ChronoLux">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 304 80" role="img" aria-label="ChronoLux">
   <defs>
-    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#d4af37"/>
-      <stop offset="100%" style="stop-color:#b8962e"/>
+    <linearGradient id="clGoldGradFull" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e9cd7a"/>
+      <stop offset="55%" stop-color="#c69a3a"/>
+      <stop offset="100%" stop-color="#a9781f"/>
+    </linearGradient>
+    <linearGradient id="clGemGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="45%" stop-color="#d9e7ef"/>
+      <stop offset="100%" stop-color="#9db7c4"/>
     </linearGradient>
   </defs>
-  <polygon points="24,4 44,24 24,44 4,24" fill="url(#gold)"/>
-  <text x="54" y="32" font-family="Libre Baskerville, Georgia, serif" font-size="22" font-weight="700" fill="#1a1a1a">ChronoLux</text>
+
+  <!-- Emblem: watch case set with a gemstone crown -->
+  <g transform="translate(40,42)">
+    <circle r="34" fill="none" stroke="url(#clGoldGradFull)" stroke-width="2.4"/>
+    <circle r="26" fill="none" stroke="url(#clGoldGradFull)" stroke-width="1" opacity="0.55"/>
+    <rect x="32" y="-5" width="8" height="10" rx="2.4" fill="url(#clGoldGradFull)"/>
+    <g stroke="url(#clGoldGradFull)" stroke-width="1.6" stroke-linecap="round" opacity="0.85">
+      <line x1="0" y1="-30" x2="0" y2="-25.5"/>
+      <line x1="0" y1="30" x2="0" y2="25.5"/>
+      <line x1="-30" y1="0" x2="-25.5" y2="0"/>
+      <line x1="30" y1="0" x2="25.5" y2="0"/>
+    </g>
+    <line x1="0" y1="0" x2="0" y2="-18" stroke="url(#clGoldGradFull)" stroke-width="2.6" stroke-linecap="round"/>
+    <line x1="0" y1="0" x2="13" y2="8" stroke="url(#clGoldGradFull)" stroke-width="2.6" stroke-linecap="round"/>
+    <circle r="3" fill="url(#clGoldGradFull)"/>
+    <polygon points="0,-40 6,-34 3.5,-28 -3.5,-28 -6,-34" fill="url(#clGemGrad)" stroke="#7b93a1" stroke-width="0.6" stroke-linejoin="round"/>
+    <path d="M -6,-34 L 6,-34 M -6,-34 L -3.5,-28 M 6,-34 L 3.5,-28 M 0,-40 L 0,-34" stroke="#7b93a1" stroke-width="0.5" opacity="0.75" fill="none"/>
+  </g>
+
+  <!-- Wordmark: company name only -->
+  <text x="96" y="51" font-family="'Libre Baskerville', Georgia, serif" font-size="32" font-weight="700" fill="#15130f" letter-spacing="0.4">Chrono<tspan fill="url(#clGoldGradFull)">Lux</tspan></text>
 </svg>

@@ -5,6 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ChronoLux | Register</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/images/logo-mark.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon-16.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="../assets/images/favicon-192.png">
+  <link rel="shortcut icon" href="../favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -23,63 +29,35 @@
 
   <nav class="navbar navbar-expand-lg site-navbar login-navbar" aria-label="Register navigation">
     <div class="container">
-      <a class="navbar-brand" href="index.html">
-        <i class="fas fa-gem me-2" aria-hidden="true"></i>ChronoLux
+      <a class="navbar-brand d-inline-flex align-items-center gap-2" href="index.html">
+        <img class="site-logo-mark" width="30" height="30" src="../assets/images/logo-mark.svg" alt="ChronoLux crest">
+        <span>Chrono<span>Lux</span></span>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#registerNav"
         aria-controls="registerNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="registerNav">
-        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
-          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        </ul>
-      </div>
       <div class="navbar-controls">
         <button id="themeToggle" class="theme-toggle" aria-label="Switch to dark mode" type="button">
-            <i class="fas fa-moon" aria-hidden="true"></i>
-          </button>
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </button>
         <button id="rtlToggle" class="rtl-toggle" aria-label="Toggle RTL direction" type="button">
-            <i class="fa-solid fa-right-left" aria-hidden="true"></i>
-          </button>
-          <a href="login.html" class="btn-gold d-none d-lg-inline-flex">
-            <i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i>Sign In
-          </a>
-        </div>
-          </div>
+          <i class="fa-solid fa-right-left" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
   </nav>
 
-  <main id="registerContent" class="login-shell">
-    <section class="login-hero-panel" aria-labelledby="registerHeroTitle">
-      <div class="login-hero-bg">
-        <img src="../assets/images/hero-premium-watch.jpg" alt="Premium luxury watch prepared for ChronoLux service">
-      </div>
-      <div class="login-hero-overlay"></div>
-      <div class="login-hero-content">
-        <span class="login-pill"><i class="fa-solid fa-user-plus" aria-hidden="true"></i> Private client access</span>
-        <h1 id="registerHeroTitle">Create your ChronoLux account.</h1>
-        <p>Join the client portal to book consultations, track active repairs, and keep your service history ready
-          whenever you need it.</p>
-        <ul class="login-benefits" aria-label="Registration benefits">
-          <li><i class="fa-solid fa-clock" aria-hidden="true"></i><span>Save time on every future booking</span></li>
-          <li><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i><span>Track watch and jewellery
-              care</span></li>
-          <li><i class="fa-solid fa-receipt" aria-hidden="true"></i><span>Keep invoices and estimates together</span>
-          </li>
-        </ul>
-      </div>
-    </section>
-
+  <main id="registerContent" class="login-shell login-shell--single">
     <section class="login-form-panel" aria-labelledby="registerTitle">
       <div class="login-card register-card">
-        <div class="login-card-header">
-          <h2 id="registerTitle">Register</h2>
-          <p>Demo mode is restricted. Use the customer demo login to enter the portal.</p>
+        <div class="login-card-header text-center">
+          <a href="index.html" class="navbar-brand justify-content-center">
+            <img class="site-logo-mark" src="../assets/images/logo-mark.svg" width="30" height="30" alt="ChronoLux">
+            <span>Chrono<span>Lux</span></span>
+          </a>
+          <h2 id="registerTitle">Welcome</h2>
+          <p>Create your account to get started. You'll be able to log in once your account is created.</p>
         </div>
 
         <form id="registerForm" class="portal-form login-panel active" novalidate>
@@ -148,6 +126,18 @@
           <button type="submit" class="btn-gold w-100 mt-4">
             <i class="fa-solid fa-user-plus" aria-hidden="true"></i>Create Account
           </button>
+
+          <div class="auth-divider">Or sign up with</div>
+
+          <div class="social-auth-buttons">
+            <button type="button" id="googleSignupBtn" class="btn-social-auth btn-google-auth">
+              <i class="fa-brands fa-google" aria-hidden="true"></i>Continue with Google
+            </button>
+            <button type="button" id="appleSignupBtn" class="btn-social-auth btn-apple-auth">
+              <i class="fa-brands fa-apple" aria-hidden="true"></i>Continue with Apple
+            </button>
+          </div>
+
           <p class="login-switch-note">Use demo access? <a href="login.html">Sign in</a></p>
           <p class="login-switch-note mt-2"><a href="login.html#admin">Admin access</a></p>
         </form>
@@ -156,6 +146,7 @@
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/accounts-store.js"></script>
   <script src="../assets/js/main.js"></script>
   <script>
     document.getElementById('registerForm').addEventListener('submit', function (e) {
@@ -167,9 +158,20 @@
       const phone = document.querySelector('#phone').value.trim();
       const password = document.querySelector('#signupPassword').value.trim();
       const confirmPassword = document.querySelector('#confirmPassword').value.trim();
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
       if (!firstName || !lastName || !email || !phone || !password || !confirmPassword) {
         alert('Please fill in all fields');
+        return;
+      }
+
+      if (!emailPattern.test(email)) {
+        alert('Please enter a valid email address');
+        return;
+      }
+
+      if (password.length < 6) {
+        alert('Password must be at least 6 characters');
         return;
       }
 
@@ -178,9 +180,69 @@
         return;
       }
 
-      alert('Demo mode only: please sign in with customer@chronolux.com / customer123.');
+      const result = window.ChronoluxAccounts.registerAccount({
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        phone: phone,
+        password: password
+      });
+
+      if (!result.ok && result.reason === 'exists') {
+        alert('An account with that email already exists. Please log in instead.');
+        window.location.replace('login.html');
+        return;
+      }
+
+      if (!result.ok) {
+        alert('Something went wrong creating your account. Please try again.');
+        return;
+      }
+
+      alert('Account created! Please log in with your new email and password.');
       window.location.replace('login.html');
     });
+
+    function socialDemoSignup(provider) {
+      [
+        'userLoggedIn', 'userEmail', 'userLoggedInEmail', 'userName',
+        'adminLoggedIn', 'adminEmail', 'adminLoggedInEmail', 'adminName'
+      ].forEach(function (key) {
+        localStorage.removeItem(key);
+      });
+
+      const demoEmail = 'demo.' + provider + '.user@example.com';
+      const demoName = 'Sofia Laurent';
+
+      // Social sign-up creates (or reuses) the account, then logs the
+      // user straight in — matching how real Google/Apple sign-up
+      // flows work, since the provider itself acts as the verification
+      // step in place of a password.
+      window.ChronoluxAccounts.upsertSocialAccount(demoEmail, demoName);
+
+      localStorage.setItem('userLoggedIn', 'true');
+      localStorage.setItem('userLoggedInEmail', demoEmail);
+      localStorage.setItem('userEmail', demoEmail);
+      localStorage.setItem('userName', demoName);
+      localStorage.setItem('authProvider', provider);
+
+      window.location.replace('user-dashboard.html');
+    }
+
+    const googleSignupBtn = document.getElementById('googleSignupBtn');
+    const appleSignupBtn = document.getElementById('appleSignupBtn');
+
+    if (googleSignupBtn) {
+      googleSignupBtn.addEventListener('click', function () {
+        socialDemoSignup('google');
+      });
+    }
+
+    if (appleSignupBtn) {
+      appleSignupBtn.addEventListener('click', function () {
+        socialDemoSignup('apple');
+      });
+    }
   </script>
 </body>
 

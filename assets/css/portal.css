@@ -734,6 +734,24 @@
   box-shadow: 0 24px 70px rgba(15, 23, 42, 0.08);
 }
 
+.login-shell--single {
+  grid-template-columns: 1fr;
+  max-width: 560px;
+  box-shadow: none;
+  background: transparent;
+}
+
+.login-shell--single .login-form-panel {
+  background: #f8fafc;
+}
+
+.login-logo {
+  display: block;
+  height: 56px;
+  width: auto;
+  margin: 0 auto 20px;
+}
+
 .login-hero-panel {
   position: relative;
   min-height: 660px;
@@ -853,6 +871,7 @@
   font-size: clamp(2rem, 4vw, 2.8rem);
 }
 
+
 .login-card-header p {
   margin: 0;
   color: #6b7280;
@@ -869,6 +888,7 @@
   color: #374151;
   font-size: 0.9rem;
   line-height: 1.45;
+  text-align: left;
 }
 
 .login-demo-note strong {
@@ -976,6 +996,89 @@
   margin: 18px 0 0;
   text-align: center;
   color: #6b7280;
+}
+
+.auth-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 22px 0;
+  color: #6b7280;
+  font-size: 0.85rem;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #e5e7eb;
+}
+
+.social-auth-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.btn-social-auth {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 50px;
+  padding: 10px 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #111827;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.btn-social-auth:hover {
+  border-color: var(--color-primary);
+  background: #f9f7f2;
+  color: #111827;
+  transform: translateY(-2px);
+}
+
+.btn-social-auth i {
+  font-size: 1.05rem;
+}
+
+.btn-social-auth.btn-google-auth i {
+  color: #EA4335;
+}
+
+.btn-social-auth.btn-apple-auth i {
+  color: #111827;
+}
+
+[data-theme="dark"] .auth-divider {
+  color: #9ca3af;
+}
+
+[data-theme="dark"] .auth-divider::before,
+[data-theme="dark"] .auth-divider::after {
+  background: rgba(212, 168, 67, 0.25);
+}
+
+[data-theme="dark"] .btn-social-auth {
+  background: #1a1a1a;
+  border-color: rgba(212, 168, 67, 0.25);
+  color: #f7f2e8;
+}
+
+[data-theme="dark"] .btn-social-auth:hover {
+  background: #222222;
+  border-color: var(--color-primary);
+}
+
+[data-theme="dark"] .btn-social-auth.btn-apple-auth i {
+  color: #f7f2e8;
 }
 
 [data-theme="dark"] .login-page {
@@ -2355,4 +2458,35 @@ SUPPORT PAGE FAQ DARK MODE FIX
 
 [data-theme="dark"] .portal-stat .label {
   color: #d4a843 !important;
+}
+
+/* Login & Signup Logo */
+.login-card-header .navbar-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: #111827;
+}
+
+.login-card-header .site-logo-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  color: #d4a843;
+  flex-shrink: 0;
+}
+
+.login-card-header .site-logo-mark i {
+  font-size: 28px;
+}
+
+.login-card-header .navbar-brand span:last-child {
+  color: #d4a843;
 }

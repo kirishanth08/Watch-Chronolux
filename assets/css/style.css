@@ -8,6 +8,9 @@
    CSS VARIABLES — Light Mode (Default)
    ============================================ */
 :root {
+  /* Fixed brand color for the "ChronoLux" logotype — intentionally NOT
+     overridden in dark-mode.css so the logo looks identical in both themes. */
+  --color-logo-gold: #B8860B;
   --color-primary: #B8860B;
   --color-primary-dark: #96700A;
   --color-primary-light: #D4A843;
@@ -204,12 +207,13 @@ img {
   font-family: var(--font-heading);
   font-size: 1.35rem;
   font-weight: 700;
-  color: var(--color-text);
+  color: var(--color-logo-gold);
   transition: var(--transition-base);
 }
 
 .site-navbar .navbar-brand:hover {
-  color: var(--color-primary);
+  color: var(--color-logo-gold);
+  opacity: 0.85;
 }
 
 .site-navbar .navbar-brand i {
@@ -307,6 +311,72 @@ img {
   transform: translateY(-2px);
 }
 
+/* ---- Mobile navbar: keep toggler/controls fixed in place and
+       overlay the menu instead of pushing content down ---- */
+@media (max-width: 991.98px) {
+
+  .site-navbar .container {
+    position: relative;
+  }
+
+  .navbar-collapse {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    max-height: calc(100vh - var(--navbar-height));
+    overflow-y: auto;
+    background-color: var(--color-bg);
+    border-top: 1px solid var(--color-border);
+    padding: var(--spacing-md) var(--spacing-md);
+    box-shadow: var(--shadow-md);
+    z-index: 1020;
+  }
+
+}
+
+/* ---- Mobile/tablet nav CTA: Login/Register (or Sign In) are hidden on
+       the controls bar below lg via d-lg-inline-flex, so surface them
+       inside the collapsing menu instead - otherwise they disappear
+       completely at 360px/768px with no way to reach them. ---- */
+.navbar-mobile-cta {
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-md);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--color-border);
+}
+
+.navbar-mobile-cta > a {
+  flex: 1;
+  justify-content: center;
+}
+
+@media (min-width: 992px) {
+  .navbar-mobile-cta {
+    display: none !important;
+  }
+}
+
+/* ---- Desktop nav centering fix: with the theme/RTL/login/register
+       controls sitting on the right, the brand on the left is much
+       narrower than the controls block. Bootstrap's justify-content:
+       space-between on .navbar > .container then splits the leftover
+       space into two EQUAL gaps around the nav links, which pulls the
+       whole menu off-center toward the (narrower) brand side - most
+       visible right around the lg breakpoint (e.g. 1024px). Letting
+       the collapse grow to fill the true middle space and centering
+       the links inside it centers them correctly regardless of how
+       wide the brand or controls blocks are. ---- */
+@media (min-width: 992px) {
+  .site-navbar .navbar-collapse {
+    flex: 1 1 auto;
+  }
+
+  .site-navbar .navbar-nav.mx-auto {
+    justify-content: center;
+  }
+}
+
 /* ============================================
    HERO SECTION
    ============================================ */
@@ -353,6 +423,15 @@ img {
   margin-bottom: var(--spacing-md);
 }
 
+.hero-content .section-label {
+  color: #fff3d6;
+  background: rgba(20, 16, 8, 0.5);
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+
 .hero-content p {
   font-size: 1.15rem;
   max-width: 540px;
@@ -368,7 +447,7 @@ img {
 .hero-outline-btn:hover,
 .hero-outline-btn:focus-visible {
   background-color: #FFFFFF;
-  color: var(--color-text);
+  color: #1C1C1C;
   border-color: #FFFFFF;
 }
 
@@ -478,6 +557,28 @@ img {
 
 .service-card:hover .service-media img {
   transform: scale(1.05);
+}
+
+.service-card--compact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.service-card--compact .card-icon {
+  width: 72px;
+  height: 72px;
+  font-size: 1.9rem;
+  margin: 0 auto var(--spacing-md);
+}
+
+.service-card--compact h3 {
+  margin-bottom: var(--spacing-md);
+}
+
+.service-card--compact .btn-outline-gold {
+  margin-top: auto;
 }
 
 .section-image,
@@ -597,10 +698,21 @@ img {
   color: var(--color-primary);
 }
 
+.site-logo-mark {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  object-fit: contain;
+  opacity: 1;
+}
+
 /* ============================================
    TESTIMONIALS
    ============================================ */
 .testimonial-card {
+  display: flex;
+  flex-direction: column;
   background-color: var(--color-card-bg);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
@@ -620,10 +732,15 @@ img {
   margin-bottom: var(--spacing-md);
 }
 
-.testimonial-card blockquote {
+.testimonial-card p {
+  flex: 1 0 auto;
   font-style: italic;
   margin-bottom: var(--spacing-md);
   color: var(--color-text);
+}
+
+.testimonial-card footer {
+  margin-top: auto;
 }
 
 .testimonial-card .author {
@@ -744,6 +861,21 @@ img {
   font-size: 1.1rem;
 }
 
+/* Footer brand (logo + wordmark) matches the header navbar-brand exactly */
+.site-footer h5.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-logo-gold);
+}
+
+.site-footer h5.footer-brand .site-logo-mark {
+  width: 30px;
+  height: 30px;
+}
+
 .site-footer p,
 .site-footer li {
   color: rgba(255, 255, 255, 0.75);
@@ -801,14 +933,54 @@ img {
    ============================================ */
 .page-header {
   background: linear-gradient(135deg, var(--color-text) 0%, #3A3A3A 100%);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: #FFFFFF;
   padding: var(--spacing-3xl) 0 var(--spacing-2xl);
   text-align: center;
+  position: relative;
 }
 
 .page-header h1 {
   color: #FFFFFF;
   margin-bottom: var(--spacing-sm);
+  position: relative;
+}
+
+.page-header nav {
+  position: relative;
+}
+
+/* Per-page cover photography layered under a dark gradient for legibility */
+.page-header--about {
+  background-image: linear-gradient(135deg, rgba(28, 28, 28, 0.82) 0%, rgba(58, 58, 58, 0.72) 100%), url('../images/hero-premium-watch.jpg');
+}
+
+.page-header--journal {
+  background-image: linear-gradient(135deg, rgba(28, 28, 28, 0.82) 0%, rgba(58, 58, 58, 0.72) 100%), url('../images/hero-luxury-watch-2.jpg');
+}
+
+.page-header--watchcare {
+  background-image: linear-gradient(135deg, rgba(28, 28, 28, 0.82) 0%, rgba(58, 58, 58, 0.72) 100%), url('../images/blog-jewellery-polishing.jpg');
+  background-position: center 30%;
+}
+
+.page-header--booking {
+  background-image: linear-gradient(135deg, rgba(28, 28, 28, 0.82) 0%, rgba(58, 58, 58, 0.72) 100%), url('../images/hero-watch.webp');
+}
+
+.page-header--contact {
+  background-image: linear-gradient(135deg, rgba(28, 28, 28, 0.82) 0%, rgba(58, 58, 58, 0.72) 100%), url('../images/jewellery-clasp-repair.jpg');
+}
+
+.page-header--pricing {
+  background-image: linear-gradient(135deg, rgba(28, 28, 28, 0.82) 0%, rgba(58, 58, 58, 0.72) 100%), url('../images/diamond-ring-resizing.jpg');
+  background-position: center 25%;
+}
+
+.page-header--services {
+  background-image: linear-gradient(135deg, rgba(28, 28, 28, 0.82) 0%, rgba(58, 58, 58, 0.72) 100%), url('../images/blog-mechanical-movement.jpg');
 }
 
 .breadcrumb-nav {
@@ -1987,6 +2159,12 @@ PREMIUM CTA
   border-radius: 18px;
 
   box-shadow: 0 20px 45px rgba(0, 0, 0, .25);
+
+}
+
+.cta-card p {
+
+  color: var(--color-muted);
 
 }
 

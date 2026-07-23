@@ -7,6 +7,12 @@
   <meta name="description"
     content="ChronoLux - Mayfair's premier luxury watch and fine jewellery atelier. Expert restoration, haute horology servicing, and bespoke care for Rolex, Omega, Cartier, and Patek Philippe since 1992.">
   <title>ChronoLux | Luxury Watch &amp; Fine Jewellery Atelier - London</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/images/logo-mark.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon-16.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="../assets/images/favicon-192.png">
+  <link rel="shortcut icon" href="../favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/apple-touch-icon.png">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -83,8 +89,9 @@
   <!-- ===== NAVBAR ===== -->
   <nav class="navbar navbar-expand-lg site-navbar" aria-label="Main navigation">
     <div class="container">
-      <a class="navbar-brand" href="index.html">
-        <i class="fas fa-gem me-2" aria-hidden="true"></i>ChronoLux
+      <a class="navbar-brand d-inline-flex align-items-center gap-2" href="index.html">
+        <img class="site-logo-mark" width="30" height="30" src="../assets/images/logo-mark.svg" alt="ChronoLux crest">
+        <span>Chrono<span>Lux</span></span>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
         aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -120,17 +127,20 @@
           <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
+        <div class="navbar-mobile-cta d-flex d-lg-none">
+          <a href="login.html" class="btn-outline-gold">Login</a>
+          <a href="signup.html" class="btn-gold">Register</a>
+        </div>
       </div>
       <div class="navbar-controls">
-        <a href="booking.html" class="btn-gold me-2 d-none d-lg-inline-flex">Book Consultation</a>
-        <a href="login.html" class="btn-outline-gold me-2 d-none d-lg-inline-flex">Login</a>
-        <a href="signup.html" class="btn-outline-gold me-2 d-none d-lg-inline-flex">Register</a>
         <button id="themeToggle" class="theme-toggle" aria-label="Switch to dark mode" type="button">
           <i class="fas fa-moon" aria-hidden="true"></i>
         </button>
-        <button id="rtlToggle" class="rtl-toggle" aria-label="Toggle RTL direction">
-          <i class="fa-solid fa-right-left"></i>
+        <button id="rtlToggle" class="rtl-toggle" aria-label="Toggle RTL direction" aria-pressed="false" type="button">
+          <i class="fas fa-right-left" aria-hidden="true"></i>
         </button>
+        <a href="login.html" class="btn-outline-gold me-2 d-none d-lg-inline-flex">Login</a>
+        <a href="signup.html" class="btn-gold d-none d-lg-inline-flex">Register</a>
       </div>
     </div>
   </nav>
@@ -174,82 +184,49 @@
         <div class="row g-4">
           <!-- Service Card 1 -->
           <div class="col-md-6 col-lg-4">
-            <article class="service-card">
-              <div class="service-media">
-                <img src="../Battery.png"
-                  alt="Luxury watch after service showing a premium timepiece in a repair workshop" loading="lazy">
-              </div>
+            <article class="service-card service-card--compact">
               <div class="card-icon"><i class="fas fa-battery-full" aria-hidden="true"></i></div>
               <h3>Quartz Battery Service</h3>
-              <p>Precision battery replacement for luxury quartz timepieces, complete with gasket inspection and
-                pressure testing to manufacturer standards.</p>
               <a href="service-details.html?id=battery" class="btn-outline-gold btn-sm">Learn More</a>
             </article>
           </div>
           <!-- Service Card 2 -->
           <div class="col-md-6 col-lg-4">
-            <article class="service-card">
-              <div class="service-media">
-                <img src="../strap.png" alt="Watch strap and bracelet restoration in a premium atelier" loading="lazy">
-              </div>
+            <article class="service-card service-card--compact">
               <div class="card-icon"><i class="fas fa-link" aria-hidden="true"></i></div>
               <h3>Strap &amp; Bracelet Atelier</h3>
-              <p>Bespoke strap fitting, bracelet sizing, and clasp restoration for leather, alligator, and
-                precious-metal bracelets.</p>
               <a href="service-details.html?id=strap" class="btn-outline-gold btn-sm">Learn More</a>
             </article>
           </div>
           <!-- Service Card 3 -->
           <div class="col-md-6 col-lg-4">
-            <article class="service-card">
-              <div class="service-media">
-                <img src="../service.png" alt="Luxury mechanical watch servicing in a professional horology workshop"
-                  loading="lazy">
-              </div>
+            <article class="service-card service-card--compact">
               <div class="card-icon"><i class="fas fa-cogs" aria-hidden="true"></i></div>
               <h3>Haute Horology Servicing</h3>
-              <p>Complete mechanical and automatic overhauls - disassembly, ultrasonic cleaning, lubrication,
-                regulation, and certified pressure testing.</p>
               <a href="service-details.html?id=service" class="btn-outline-gold btn-sm">Learn More</a>
             </article>
           </div>
           <!-- Service Card 4 -->
           <div class="col-md-6 col-lg-4">
-            <article class="service-card">
-              <div class="service-media">
-                <img src="../ring.jpeg" alt="Luxury ring resizing in a fine jewellery atelier" loading="lazy">
-              </div>
+            <article class="service-card service-card--compact">
               <div class="card-icon"><i class="fas fa-ring" aria-hidden="true"></i></div>
               <h3>Ring Resizing &amp; Refinement</h3>
-              <p>Invisible resizing for platinum, gold, and diamond-set bands - preserving structural integrity and
-                original design lines.</p>
               <a href="service-details.html?id=ring" class="btn-outline-gold btn-sm">Learn More</a>
             </article>
           </div>
           <!-- Service Card 5 -->
           <div class="col-md-6 col-lg-4">
-            <article class="service-card">
-              <div class="service-media">
-                <img src="../assets/images/fine-jewellery.webp"
-                  alt="Fine jewellery restoration by a master jeweller in a luxury atelier" loading="lazy">
-              </div>
+            <article class="service-card service-card--compact">
               <div class="card-icon"><i class="fas fa-gem" aria-hidden="true"></i></div>
               <h3>Fine Jewellery Restoration</h3>
-              <p>Professional ultrasonic and steam cleaning to revive the brilliance of diamonds, coloured gemstones,
-                and precious metal settings.</p>
               <a href="service-details.html?id=jewellery" class="btn-outline-gold btn-sm">Learn More</a>
             </article>
           </div>
           <!-- Service Card 6 -->
           <div class="col-md-6 col-lg-4">
-            <article class="service-card">
-              <div class="service-media">
-                <img src="../chain.png" alt="Gold chain clasp repair in a luxury jewellery workshop" loading="lazy">
-              </div>
+            <article class="service-card service-card--compact">
               <div class="card-icon"><i class="fas fa-chain" aria-hidden="true"></i></div>
               <h3>Chain &amp; Clasp Restoration</h3>
-              <p>Micro-soldering, link replacement, and clasp restoration for necklaces, bracelets, and heirloom chains.
-              </p>
               <a href="service-details.html?id=restoration" class="btn-outline-gold btn-sm">Learn More</a>
             </article>
           </div>
@@ -457,7 +434,7 @@
       <div class="row g-4">
         <!-- Column 1: About -->
         <div class="col-md-6 col-lg-3">
-          <h5><i class="fas fa-gem me-2" aria-hidden="true"></i>ChronoLux</h5>
+          <h5 class="footer-brand"><img class="site-logo-mark" width="30" height="30" src="../assets/images/logo-mark.svg" alt="ChronoLux crest"><span>Chrono<span>Lux</span></span></h5>
           <p>Mayfair's premier atelier for luxury watch and fine jewellery restoration since 1992. White-glove service,
             master craftsmanship, and uncompromising standards.</p>
           <div class="footer-social mt-3">
