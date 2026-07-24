@@ -494,6 +494,14 @@ img {
   padding: var(--spacing-lg);
   height: 100%;
   transition: var(--transition-base);
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card .btn-gold,
+.service-card .btn-outline-gold {
+  margin-top: auto;
+  align-self: flex-start;
 }
 
 .service-card:hover {
@@ -958,7 +966,7 @@ img {
 }
 
 .page-header--journal {
-  background-image: linear-gradient(135deg, rgba(28, 28, 28, 0.82) 0%, rgba(58, 58, 58, 0.72) 100%), url('../images/hero-luxury-watch-2.jpg');
+  background-image: linear-gradient(135deg, rgba(28, 28, 28, 0.82) 0%, rgba(58, 58, 58, 0.72) 100%), url('../images/blog-hero.webp');
 }
 
 .page-header--watchcare {
@@ -975,7 +983,7 @@ img {
 }
 
 .page-header--pricing {
-  background-image: linear-gradient(135deg, rgba(28, 28, 28, 0.82) 0%, rgba(58, 58, 58, 0.72) 100%), url('../images/diamond-ring-resizing.jpg');
+  background-image: linear-gradient(135deg, rgba(28, 28, 28, 0.82) 0%, rgba(58, 58, 58, 0.72) 100%), url('../images/pricing-hero.webp');
   background-position: center 25%;
 }
 
@@ -1111,6 +1119,16 @@ img {
   background-color: var(--color-card-bg);
   color: var(--color-text);
   transition: var(--transition-base);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+  width: 100%;
+}
+
+.accordion-button::after {
+  flex-shrink: 0;
+  margin-inline-start: auto;
 }
 
 .accordion-button:not(.collapsed) {
@@ -1975,6 +1993,17 @@ PRICING PREVIEW
   transition: .35s;
 
   height: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+}
+
+.pricing-card .btn-gold,
+.pricing-card .btn-outline-gold {
+
+  margin-top: auto;
 
 }
 

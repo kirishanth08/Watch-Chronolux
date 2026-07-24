@@ -87,6 +87,17 @@
 }
 
 /* Navbar controls order */
+/* Flip password visibility toggle to the left side of the field */
+[dir="rtl"] .password-wrapper .form-control {
+  padding-right: 16px;
+  padding-left: 48px;
+}
+
+[dir="rtl"] .password-toggle {
+  right: auto;
+  left: 15px;
+}
+
 [dir="rtl"] .navbar-controls {
   flex-direction: row-reverse;
 }
