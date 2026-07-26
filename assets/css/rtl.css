@@ -7,6 +7,58 @@
   text-align: right;
 }
 
+/* Content stays in English (LTR script), so each text run's internal
+   reading order must stay ltr even though the block above is
+   right-aligned. Without this, the browser's bidi algorithm can
+   reorder trailing neutral punctuation (., ?, !, ), %, etc.) to the
+   front of the sentence instead of the end — and it will only show up
+   in some spots and not others, because it depends on each element's
+   specific markup structure. unicode-bidi: plaintext makes each
+   element detect its own direction from its content (all-English →
+   ltr) without touching the inherited `direction` value that other
+   logical-property-based styling may rely on. */
+[dir="rtl"] p,
+[dir="rtl"] span,
+[dir="rtl"] a,
+[dir="rtl"] button,
+[dir="rtl"] li,
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] h5,
+[dir="rtl"] h6,
+[dir="rtl"] label,
+[dir="rtl"] input,
+[dir="rtl"] textarea,
+[dir="rtl"] select,
+[dir="rtl"] blockquote {
+  unicode-bidi: plaintext;
+}
+
+/* Pricing tier feature list was hardcoded left-aligned — never flips */
+[dir="rtl"] .pricing-tier ul {
+  text-align: right;
+}
+
+/* Floating experience badge on the about/team section */
+[dir="rtl"] .experience-card {
+  right: auto;
+  left: 25px;
+}
+
+/* Pricing list checkmark icon spacing */
+[dir="rtl"] .pricing-list i {
+  margin-right: 0;
+  margin-left: 10px;
+}
+
+/* CTA card bullet list indent */
+[dir="rtl"] .cta-card ul {
+  padding-left: 0;
+  padding-right: 18px;
+}
+
 /* Flip navbar brand spacing */
 [dir="rtl"] .site-navbar .navbar-brand i {
   margin-left: var(--spacing-sm);
@@ -54,30 +106,29 @@
 }
 
 /* Flip breadcrumb separator */
-[dir="rtl"] .breadcrumb-nav li + li::before {
+[dir="rtl"] .breadcrumb-nav li+li::before {
   content: '/';
   margin-right: 0;
   margin-left: var(--spacing-sm);
 }
 
-/* Flip bring list */
-[dir="rtl"] .bring-list li {
-  flex-direction: row-reverse;
-}
-
-/* Flip checklist */
-[dir="rtl"] .checklist li {
-  flex-direction: row-reverse;
-}
-
-/* Flip author bio */
-[dir="rtl"] .author-bio {
-  flex-direction: row-reverse;
-}
-
-/* Flip cert badge */
-[dir="rtl"] .cert-badge {
-  flex-direction: row-reverse;
+/* NOTE: These items are display:flex with the default flex-direction:
+   row, and they sit inside <html dir="rtl">, which the browser
+   already resolves to direction: rtl. Flexbox's "row" axis follows
+   the container's direction automatically — so under RTL, these
+   already render mirrored (icon/first item on the right) with zero
+   extra CSS. Adding flex-direction: row-reverse on top double-flips
+   them back to looking like plain LTR order, which is exactly the
+   bug you spotted in the cert-badge screenshot (icon still on the
+   left). Removed here; do not re-add without also setting an explicit
+   direction on the element itself. */
+[dir="rtl"] .bring-list li,
+[dir="rtl"] .checklist li,
+[dir="rtl"] .author-bio,
+[dir="rtl"] .cert-badge,
+[dir="rtl"] .navbar-controls,
+[dir="rtl"] .newsletter-form {
+  flex-direction: row;
 }
 
 /* Flip pricing tier checkmarks */
@@ -96,13 +147,4 @@
 [dir="rtl"] .password-toggle {
   right: auto;
   left: 15px;
-}
-
-[dir="rtl"] .navbar-controls {
-  flex-direction: row-reverse;
-}
-
-/* Newsletter form */
-[dir="rtl"] .newsletter-form {
-  flex-direction: row-reverse;
 }

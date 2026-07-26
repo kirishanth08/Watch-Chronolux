@@ -1911,15 +1911,84 @@
   direction: rtl;
 }
 
+/* Same bidi fix as the public site's rtl.css — content is still
+   English, so trailing punctuation shouldn't get reordered even
+   though the portal shell above is set to direction: rtl. */
+[dir="rtl"] .portal-shell p,
+[dir="rtl"] .portal-shell span,
+[dir="rtl"] .portal-shell a,
+[dir="rtl"] .portal-shell button,
+[dir="rtl"] .portal-shell li,
+[dir="rtl"] .portal-shell h1,
+[dir="rtl"] .portal-shell h2,
+[dir="rtl"] .portal-shell h3,
+[dir="rtl"] .portal-shell h4,
+[dir="rtl"] .portal-shell h5,
+[dir="rtl"] .portal-shell h6,
+[dir="rtl"] .portal-shell label,
+[dir="rtl"] .portal-shell input,
+[dir="rtl"] .portal-shell textarea,
+[dir="rtl"] .portal-shell select {
+  unicode-bidi: plaintext;
+}
+
 [dir="rtl"] .portal-sidebar {
   border-right: 0;
   border-left: 1px solid rgba(212, 168, 67, 0.2);
 }
 
+/* Mobile sidebar currently only slides in from the left */
+@media (max-width: 900px) {
+  [dir="rtl"] .portal-sidebar {
+    left: auto;
+    right: -300px;
+    transition: right 0.24s ease;
+  }
+
+  [dir="rtl"] .portal-sidebar.open {
+    right: 0;
+  }
+}
+
+/* Same double-reversal issue as the public rtl.css: .portal-shell sets
+   direction: rtl explicitly, so these flex rows (default
+   flex-direction: row) already mirror on their own. row-reverse here
+   was cancelling that back out. */
 [dir="rtl"] .client-topbar-actions,
 [dir="rtl"] .client-action-row,
 [dir="rtl"] .admin-topbar-actions {
-  flex-direction: row-reverse;
+  flex-direction: row;
+}
+
+/* Sidebar section label indent */
+[dir="rtl"] .portal-nav-label {
+  padding-left: 0;
+  padding-right: 10px;
+}
+
+/* Repair-history timeline accent + indent */
+[dir="rtl"] .timeline {
+  padding-left: 0;
+  padding-right: 20px;
+  border-left: none;
+  border-right: 2px solid rgba(212, 168, 67, 0.25);
+}
+
+[dir="rtl"] .timeline-item {
+  padding-left: 0;
+  padding-right: 16px;
+}
+
+/* FAQ accordion question was hardcoded left-aligned */
+[dir="rtl"] .faq-question {
+  text-align: right;
+}
+
+/* Toast notifications pinned to the wrong bottom corner in RTL */
+[dir="rtl"] .admin-toast,
+[dir="rtl"] .client-toast {
+  right: auto;
+  left: 20px;
 }
 
 @media (max-width: 1100px) {
