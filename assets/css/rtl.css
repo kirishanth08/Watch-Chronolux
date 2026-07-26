@@ -137,6 +137,30 @@
   margin-left: var(--spacing-xs);
 }
 
+/* FAQ accordion: Bootstrap's own .accordion-button rule hardcodes
+   text-align: left and is never flipped for RTL (the site only loads
+   the standard LTR bootstrap.css). When a question wraps to a second
+   line, it stays left-aligned inside its own flex box and ends up
+   crowding the chevron icon on the left instead of sitting away from
+   it like the rest of the RTL layout. */
+[dir="rtl"] .accordion-button {
+  text-align: right;
+}
+
+/* FAQ accordion chevron: Bootstrap's own .accordion-button::after rule
+   sets the physical margin-left: auto (never flipped for RTL). This
+   project's style.css separately adds margin-inline-start: auto,
+   which in RTL resolves to margin-right: auto instead. Neither rule
+   cancels the other's physical side, so in RTL the icon ends up with
+   auto margins on BOTH left and right at once, centering it in the
+   button instead of pushing it flush to the edge. Force a single
+   auto margin here so the icon sits flush left, mirroring the
+   flush-right position it has in LTR. */
+[dir="rtl"] .accordion-button::after {
+  margin-left: 0;
+  margin-right: auto;
+}
+
 /* Navbar controls order */
 /* Flip password visibility toggle to the left side of the field */
 [dir="rtl"] .password-wrapper .form-control {
