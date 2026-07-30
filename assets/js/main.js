@@ -26,26 +26,36 @@
      DARK / LIGHT MODE TOGGLE
      ============================================ */
   function initThemeToggle() {
-    const toggleBtn = document.getElementById('themeToggle');
-    if (!toggleBtn) return;
+    // A page can have more than one instance of this button (e.g. the
+    // desktop navbar-controls copy and the mobile hamburger-menu copy),
+    // so keep every instance in sync rather than binding to a single id.
+    const toggleBtns = document.querySelectorAll('.theme-toggle');
+    if (!toggleBtns.length) return;
 
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
+    const isDark = savedTheme === 'dark';
+    if (isDark) {
       document.documentElement.setAttribute('data-theme', 'dark');
-      updateThemeIcon(toggleBtn, true);
     }
+    toggleBtns.forEach(function (btn) {
+      updateThemeIcon(btn, isDark);
+    });
 
-    toggleBtn.addEventListener('click', function () {
-      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-      if (isDark) {
-        document.documentElement.removeAttribute('data-theme');
-        localStorage.setItem('theme', 'light');
-        updateThemeIcon(toggleBtn, false);
-      } else {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
-        updateThemeIcon(toggleBtn, true);
-      }
+    toggleBtns.forEach(function (toggleBtn) {
+      toggleBtn.addEventListener('click', function () {
+        const currentlyDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        const nextDark = !currentlyDark;
+        if (nextDark) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+          localStorage.setItem('theme', 'dark');
+        } else {
+          document.documentElement.removeAttribute('data-theme');
+          localStorage.setItem('theme', 'light');
+        }
+        toggleBtns.forEach(function (btn) {
+          updateThemeIcon(btn, nextDark);
+        });
+      });
     });
   }
 
@@ -93,26 +103,34 @@
      RTL TOGGLE
      ============================================ */
   function initRtlToggle() {
-    const toggleBtn = document.getElementById('rtlToggle');
-    if (!toggleBtn) return;
+    // Same reasoning as initThemeToggle: sync every instance of the button.
+    const toggleBtns = document.querySelectorAll('.rtl-toggle');
+    if (!toggleBtns.length) return;
 
     const savedDir = localStorage.getItem('direction');
-    if (savedDir === 'rtl') {
+    const isRtl = savedDir === 'rtl';
+    if (isRtl) {
       document.documentElement.setAttribute('dir', 'rtl');
-      toggleBtn.setAttribute('aria-pressed', 'true');
     }
+    toggleBtns.forEach(function (btn) {
+      btn.setAttribute('aria-pressed', isRtl ? 'true' : 'false');
+    });
 
-    toggleBtn.addEventListener('click', function () {
-      const isRtl = document.documentElement.getAttribute('dir') === 'rtl';
-      if (isRtl) {
-        document.documentElement.removeAttribute('dir');
-        localStorage.setItem('direction', 'ltr');
-        toggleBtn.setAttribute('aria-pressed', 'false');
-      } else {
-        document.documentElement.setAttribute('dir', 'rtl');
-        localStorage.setItem('direction', 'rtl');
-        toggleBtn.setAttribute('aria-pressed', 'true');
-      }
+    toggleBtns.forEach(function (toggleBtn) {
+      toggleBtn.addEventListener('click', function () {
+        const currentlyRtl = document.documentElement.getAttribute('dir') === 'rtl';
+        const nextRtl = !currentlyRtl;
+        if (nextRtl) {
+          document.documentElement.setAttribute('dir', 'rtl');
+          localStorage.setItem('direction', 'rtl');
+        } else {
+          document.documentElement.removeAttribute('dir');
+          localStorage.setItem('direction', 'ltr');
+        }
+        toggleBtns.forEach(function (btn) {
+          btn.setAttribute('aria-pressed', nextRtl ? 'true' : 'false');
+        });
+      });
     });
   }
 

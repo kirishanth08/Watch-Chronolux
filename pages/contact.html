@@ -102,16 +102,24 @@
           <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
           <li class="nav-item"><a class="nav-link active" href="contact.html" aria-current="page">Contact</a></li>
         </ul>
+        <div class="navbar-mobile-toggles d-flex d-lg-none">
+          <button class="theme-toggle" aria-label="Switch to dark mode" type="button">
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </button>
+          <button class="rtl-toggle" aria-label="Toggle RTL direction" aria-pressed="false" type="button">
+            <i class="fas fa-right-left" aria-hidden="true"></i>
+          </button>
+        </div>
         <div class="navbar-mobile-cta d-flex d-lg-none">
           <a href="login.html" class="btn-outline-gold">Login</a>
           <a href="signup.html" class="btn-gold">Register</a>
         </div>
       </div>
       <div class="navbar-controls">
-        <button id="themeToggle" class="theme-toggle" aria-label="Switch to dark mode" type="button">
+        <button class="theme-toggle d-none d-lg-flex" aria-label="Switch to dark mode" type="button">
           <i class="fas fa-moon" aria-hidden="true"></i>
         </button>
-        <button id="rtlToggle" class="rtl-toggle" aria-label="Toggle RTL direction" aria-pressed="false" type="button">
+        <button class="rtl-toggle d-none d-lg-flex" aria-label="Toggle RTL direction" aria-pressed="false" type="button">
           <i class="fas fa-right-left" aria-hidden="true"></i>
         </button>
         <a href="login.html" class="btn-outline-gold me-2 d-none d-lg-inline-flex">Login</a>
