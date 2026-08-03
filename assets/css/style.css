@@ -9,7 +9,7 @@
    ============================================ */
 :root {
   /* Fixed brand color for the "ChronoLux" logotype — intentionally NOT
-       overridden in dark-mode.css so the logo looks identical in both themes. */
+         overridden in dark-mode.css so the logo looks identical in both themes. */
   --color-logo-gold: #B8860B;
   --color-primary: #B8860B;
   --color-primary-dark: #96700A;
@@ -45,8 +45,8 @@
 }
 
 /* ============================================
-     BASE & RESET
-     ============================================ */
+       BASE & RESET
+       ============================================ */
 *,
 *::before,
 *::after {
@@ -130,8 +130,8 @@ img {
 }
 
 /* ============================================
-     BUTTONS
-     ============================================ */
+       BUTTONS
+       ============================================ */
 .btn-gold {
   display: inline-flex;
   align-items: center;
@@ -191,8 +191,8 @@ img {
 }
 
 /* ============================================
-     NAVBAR
-     ============================================ */
+       NAVBAR
+       ============================================ */
 .site-navbar {
   position: sticky;
   top: 0;
@@ -217,9 +217,9 @@ img {
 }
 
 /* Standalone login/signup pages — no header bar. Theme + RTL toggles
-     float in the corner instead; logo lives in the card itself.
-     inset-inline-end keeps it in the correct corner automatically when
-     the RTL toggle flips the page direction. */
+       float in the corner instead; logo lives in the card itself.
+       inset-inline-end keeps it in the correct corner automatically when
+       the RTL toggle flips the page direction. */
 .auth-floating-controls {
   position: fixed;
   top: 1.25rem;
@@ -275,6 +275,24 @@ img {
 .site-navbar .nav-link:hover::after,
 .site-navbar .nav-link.active::after {
   width: 100%;
+}
+
+/* Home dropdown: the underline ::after effect above overrides
+   Bootstrap's own .dropdown-toggle::after caret, so the Home nav
+   item had no visible dropdown indicator. Add an explicit chevron
+   icon instead, and make sure Bootstrap's default caret stays
+   hidden so it can't double up with it. */
+#homeDropdown.dropdown-toggle::after {
+  display: none;
+}
+
+.home-dropdown-caret {
+  font-size: 0.7em;
+  transition: transform 0.25s ease;
+}
+
+#homeDropdown[aria-expanded="true"] .home-dropdown-caret {
+  transform: rotate(180deg);
 }
 
 .navbar-controls {
@@ -340,7 +358,7 @@ img {
 }
 
 /* ---- Mobile navbar: keep toggler/controls fixed in place and
-         overlay the menu instead of pushing content down ---- */
+           overlay the menu instead of pushing content down ---- */
 @media (max-width: 991.98px) {
 
   .site-navbar .container {
@@ -364,9 +382,9 @@ img {
 }
 
 /* ---- Mobile/tablet nav CTA: Login/Register (or Sign In) are hidden on
-         the controls bar below lg via d-lg-inline-flex, so surface them
-         inside the collapsing menu instead - otherwise they disappear
-         completely at 360px/768px with no way to reach them. ---- */
+           the controls bar below lg via d-lg-inline-flex, so surface them
+           inside the collapsing menu instead - otherwise they disappear
+           completely at 360px/768px with no way to reach them. ---- */
 .navbar-mobile-cta {
   gap: var(--spacing-sm);
   margin-top: var(--spacing-md);
@@ -386,10 +404,10 @@ img {
 }
 
 /* ---- Mobile hamburger menu: dark-mode/RTL toggles live inside the
-         collapsing menu list instead of crowding the top bar next to
-         the logo, which was wrapping/misaligning at narrow widths
-         (e.g. 360px). Hidden again at lg+ where they sit in
-         .navbar-controls instead. ---- */
+           collapsing menu list instead of crowding the top bar next to
+           the logo, which was wrapping/misaligning at narrow widths
+           (e.g. 360px). Hidden again at lg+ where they sit in
+           .navbar-controls instead. ---- */
 .navbar-mobile-toggles {
   gap: var(--spacing-sm);
   margin-top: var(--spacing-md);
@@ -410,15 +428,15 @@ img {
 }
 
 /* ---- Desktop nav centering fix: with the theme/RTL/login/register
-         controls sitting on the right, the brand on the left is much
-         narrower than the controls block. Bootstrap's justify-content:
-         space-between on .navbar > .container then splits the leftover
-         space into two EQUAL gaps around the nav links, which pulls the
-         whole menu off-center toward the (narrower) brand side - most
-         visible right around the lg breakpoint (e.g. 1024px). Letting
-         the collapse grow to fill the true middle space and centering
-         the links inside it centers them correctly regardless of how
-         wide the brand or controls blocks are. ---- */
+           controls sitting on the right, the brand on the left is much
+           narrower than the controls block. Bootstrap's justify-content:
+           space-between on .navbar > .container then splits the leftover
+           space into two EQUAL gaps around the nav links, which pulls the
+           whole menu off-center toward the (narrower) brand side - most
+           visible right around the lg breakpoint (e.g. 1024px). Letting
+           the collapse grow to fill the true middle space and centering
+           the links inside it centers them correctly regardless of how
+           wide the brand or controls blocks are. ---- */
 @media (min-width: 992px) {
   .site-navbar .navbar-collapse {
     flex: 1 1 auto;
@@ -430,8 +448,8 @@ img {
 }
 
 /* ============================================
-     HERO SECTION
-     ============================================ */
+       HERO SECTION
+       ============================================ */
 .hero-section {
   position: relative;
   min-height: 85vh;
@@ -504,8 +522,8 @@ img {
 }
 
 /* ============================================
-     SECTIONS
-     ============================================ */
+       SECTIONS
+       ============================================ */
 .section-padding {
   padding: var(--spacing-3xl) 0;
 }
@@ -536,8 +554,8 @@ img {
 }
 
 /* ============================================
-     SERVICE CARDS
-     ============================================ */
+       SERVICE CARDS
+       ============================================ */
 .service-card {
   background-color: var(--color-card-bg);
   border-left: 4px solid var(--color-primary);
@@ -689,8 +707,8 @@ img {
 }
 
 /* ============================================
-     TRUST BOXES
-     ============================================ */
+       TRUST BOXES
+       ============================================ */
 .trust-box {
   text-align: center;
   padding: var(--spacing-lg);
@@ -699,6 +717,13 @@ img {
   box-shadow: var(--shadow-sm);
   transition: var(--transition-base);
   height: 100%;
+  min-width: 0;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.row>[class*="col-"] {
+  min-width: 0;
 }
 
 .trust-box:hover {
@@ -731,8 +756,8 @@ img {
 }
 
 /* ============================================
-     BRAND STRIP
-     ============================================ */
+       BRAND STRIP
+       ============================================ */
 .brand-strip {
   background-color: var(--color-card-bg);
   padding: var(--spacing-xl) 0;
@@ -769,8 +794,8 @@ img {
 }
 
 /* ============================================
-     TESTIMONIALS
-     ============================================ */
+       TESTIMONIALS
+       ============================================ */
 .testimonial-card {
   display: flex;
   flex-direction: column;
@@ -815,8 +840,8 @@ img {
 }
 
 /* ============================================
-     TURNAROUND STRIP
-     ============================================ */
+       TURNAROUND STRIP
+       ============================================ */
 .turnaround-strip {
   background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
   color: var(--color-text);
@@ -845,8 +870,8 @@ img {
 }
 
 /* ============================================
-     CTA BANNER
-     ============================================ */
+       CTA BANNER
+       ============================================ */
 .cta-banner {
   background: linear-gradient(135deg, var(--color-text) 0%, #3A3A3A 50%, var(--color-text) 100%);
   background-size: 200% 200%;
@@ -872,8 +897,8 @@ img {
 }
 
 /* ============================================
-     NEWSLETTER
-     ============================================ */
+       NEWSLETTER
+       ============================================ */
 .newsletter-section {
   background-color: var(--color-section);
   padding: var(--spacing-2xl) 0;
@@ -907,8 +932,8 @@ img {
 }
 
 /* ============================================
-     FOOTER
-     ============================================ */
+       FOOTER
+       ============================================ */
 .site-footer {
   background-color: var(--color-footer-bg);
   color: var(--color-footer-text);
@@ -990,8 +1015,8 @@ img {
 }
 
 /* ============================================
-     PAGE HEADER (Inner Pages)
-     ============================================ */
+       PAGE HEADER (Inner Pages)
+       ============================================ */
 .page-header {
   background: linear-gradient(135deg, var(--color-text) 0%, #3A3A3A 100%);
   background-size: cover;
@@ -1069,8 +1094,8 @@ img {
 }
 
 /* ============================================
-     IMAGE HOVER WRAPPER
-     ============================================ */
+       IMAGE HOVER WRAPPER
+       ============================================ */
 .img-hover-wrap {
   overflow: hidden;
   border-radius: var(--radius-md);
@@ -1085,8 +1110,8 @@ img {
 }
 
 /* ============================================
-     TEAM CARDS
-     ============================================ */
+       TEAM CARDS
+       ============================================ */
 .team-card {
   background-color: var(--color-card-bg);
   border-radius: var(--radius-md);
@@ -1118,8 +1143,8 @@ img {
 }
 
 /* ============================================
-     PRICING TABLES
-     ============================================ */
+       PRICING TABLES
+       ============================================ */
 .pricing-table {
   width: 100%;
   background-color: var(--color-card-bg);
@@ -1156,8 +1181,8 @@ img {
 }
 
 /* ============================================
-     FAQ ACCORDION OVERRIDES
-     ============================================ */
+       FAQ ACCORDION OVERRIDES
+       ============================================ */
 .accordion-item {
   border: 1px solid var(--color-border);
   margin-bottom: var(--spacing-sm);
@@ -1195,8 +1220,8 @@ img {
 }
 
 /* ============================================
-     FORMS
-     ============================================ */
+       FORMS
+       ============================================ */
 .form-label {
   font-weight: 600;
   margin-bottom: var(--spacing-xs);
@@ -1251,8 +1276,8 @@ img {
 }
 
 /* ============================================
-     BLOG
-     ============================================ */
+       BLOG
+       ============================================ */
 .blog-filter-tabs {
   display: flex;
   gap: var(--spacing-sm);
@@ -1426,8 +1451,8 @@ img {
 }
 
 /* ============================================
-     CONTACT
-     ============================================ */
+       CONTACT
+       ============================================ */
 .contact-info-card {
   background-color: var(--color-card-bg);
   border-left: 4px solid var(--color-primary);
@@ -1436,6 +1461,9 @@ img {
   box-shadow: var(--shadow-sm);
   transition: var(--transition-base);
   height: 100%;
+  min-width: 0;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .contact-info-card:hover {
@@ -1493,8 +1521,8 @@ img {
 }
 
 /* ============================================
-     BOOKING — What to Bring
-     ============================================ */
+       BOOKING — What to Bring
+       ============================================ */
 .bring-list {
   list-style: none;
   padding: 0;
@@ -1520,8 +1548,8 @@ img {
 }
 
 /* ============================================
-     SERVICE DETAIL
-     ============================================ */
+       SERVICE DETAIL
+       ============================================ */
 .service-banner {
   position: relative;
   height: 400px;
@@ -1574,8 +1602,8 @@ img {
 }
 
 /* ============================================
-     404 PAGE
-     ============================================ */
+       404 PAGE
+       ============================================ */
 .error-page {
   min-height: 80vh;
   display: flex;
@@ -1605,8 +1633,8 @@ img {
 }
 
 /* ============================================
-     COMING SOON
-     ============================================ */
+       COMING SOON
+       ============================================ */
 .coming-soon-page {
   min-height: 100vh;
   display: flex;
@@ -1654,8 +1682,8 @@ img {
 }
 
 /* ============================================
-     CERTIFICATION BADGES
-     ============================================ */
+       CERTIFICATION BADGES
+       ============================================ */
 .cert-badge {
   display: flex;
   align-items: center;
@@ -1680,8 +1708,8 @@ img {
 }
 
 /* ============================================
-     PRICING TIERS (Service Detail)
-     ============================================ */
+       PRICING TIERS (Service Detail)
+       ============================================ */
 .pricing-tier {
   background-color: var(--color-card-bg);
   border-radius: var(--radius-md);
@@ -1727,8 +1755,8 @@ img {
 }
 
 /* ============================================
-     RESPONSIVE — Mobile < 640px
-     ============================================ */
+       RESPONSIVE — Mobile < 640px
+       ============================================ */
 @media (max-width: 639px) {
   .section-padding {
     padding: var(--spacing-2xl) 0;
@@ -1768,8 +1796,8 @@ img {
 }
 
 /* ============================================
-     RESPONSIVE — Tablet 640-1024px
-     ============================================ */
+       RESPONSIVE — Tablet 640-1024px
+       ============================================ */
 @media (min-width: 640px) and (max-width: 1023px) {
   .hero-content h1 {
     font-size: 2.25rem;
@@ -1777,8 +1805,8 @@ img {
 }
 
 /* ============================================
-     RESPONSIVE — Desktop 1024-1280px
-     ============================================ */
+       RESPONSIVE — Desktop 1024-1280px
+       ============================================ */
 @media (min-width: 1024px) and (max-width: 1279px) {
   .container {
     max-width: 960px;
@@ -1786,8 +1814,8 @@ img {
 }
 
 /* ============================================
-     RESPONSIVE — Large > 1280px
-     ============================================ */
+       RESPONSIVE — Large > 1280px
+       ============================================ */
 @media (min-width: 1280px) {
   .container {
     max-width: 1200px;
@@ -1795,8 +1823,8 @@ img {
 }
 
 /* ============================================
-     UTILITY CLASSES
-     ============================================ */
+       UTILITY CLASSES
+       ============================================ */
 .text-gold {
   color: var(--color-primary);
 }
@@ -1811,8 +1839,8 @@ img {
 
 
 /* ==========================
-     HOME PAGE 2 HERO
-  ========================== */
+       HOME PAGE 2 HERO
+    ========================== */
 
 .hero-two {
   min-height: 100vh;
@@ -1934,8 +1962,8 @@ img {
 }
 
 /*=============================
-  BRANDS SHOWCASE
-  ==============================*/
+    BRANDS SHOWCASE
+    ==============================*/
 
 .brand-showcase {
 
@@ -2016,8 +2044,8 @@ img {
 }
 
 /*=========================
-  PRICING PREVIEW
-  =========================*/
+    PRICING PREVIEW
+    =========================*/
 
 .pricing-preview {
 
@@ -2163,8 +2191,8 @@ img {
 }
 
 /*===========================
-  PREMIUM CTA
-  ===========================*/
+    PREMIUM CTA
+    ===========================*/
 
 .premium-cta {
 
@@ -2313,8 +2341,8 @@ img {
 }
 
 /*=========================
-  FAQ SECTION
-  ==========================*/
+    FAQ SECTION
+    ==========================*/
 
 .faq-section {
 
@@ -2435,8 +2463,8 @@ img {
 }
 
 /*=========================================
-  PASSWORD TOGGLE
-  =========================================*/
+    PASSWORD TOGGLE
+    =========================================*/
 
 .password-wrapper {
 
