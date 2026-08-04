@@ -379,6 +379,19 @@ img {
     z-index: 1020;
   }
 
+  /* .navbar-controls (theme/RTL toggles + login/register) is only
+       populated at lg+; below that its children are all d-none, leaving
+       an empty flex item. .site-navbar .container still uses Bootstrap's
+       default justify-content: space-between, so that empty item was
+       counted when splitting up space and dragged the toggler button
+       away from the edge toward the middle instead of sitting flush in
+       the corner. Removing it from the flex layout on mobile lets
+       space-between distribute across just the brand and the toggler,
+       pinning the hamburger to the right corner of the navbar. */
+  .site-navbar .navbar-controls {
+    display: none;
+  }
+
 }
 
 /* ---- Mobile/tablet nav CTA: Login/Register (or Sign In) are hidden on
